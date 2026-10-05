@@ -8,8 +8,8 @@
 <meta property="og:title" content="Big Lebowski Live Solo">
 <meta property="og:description" content="Book Naf Steinmetz as Walter, the rule-enforcing bowling legend, live at weddings, bar and bat mitzvahs, club nights and dinner parties in Israel.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://zev330-lab.github.io/big-lebowski-live/solo/">
-<meta property="og:image" content="https://zev330-lab.github.io/big-lebowski-live/assets/walter-night.jpg">
+<meta property="og:url" content="https://raw.githack.com/zev330-lab/big-lebowski-live/main/solo/index.html">
+<meta property="og:image" content="https://raw.githack.com/zev330-lab/big-lebowski-live/main/assets/walter-night.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111410'/%3E%3Cpath d='M32 6c-4 0-6 3-6 7 0 4 2 6 2 10 0 5-8 10-8 22 0 8 4 13 12 13s12-5 12-13c0-12-8-17-8-22 0-4 2-6 2-10 0-4-2-7-6-7z' fill='%23f4ead2'/%3E%3Crect x='25' y='20' width='14' height='4' fill='%23e3392e'/%3E%3Crect x='24' y='27' width='16' height='4' fill='%23e3392e'/%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -83,7 +83,7 @@ p{margin:0}
 .logo-sub{font-family:var(--font-stencil);font-size:9.5px;letter-spacing:.2em;color:var(--khaki);white-space:nowrap}
 :root[lang="he"] .logo-sub{letter-spacing:0;font-size:11px}
 .nav-links{display:none;gap:16px}
-.nav-links a{color:var(--paper-dim);text-decoration:none;font-size:14px;white-space:nowrap}
+.nav-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--paper-dim);text-decoration:none;font-size:14px;white-space:nowrap}
 .nav-links a:hover{color:var(--paper)}
 @media (min-width:1100px){.nav-links{display:flex}}
 .nav-links .nl-low{display:none}
@@ -101,7 +101,7 @@ p{margin:0}
 #btn-mute[aria-pressed="true"] .ico-off{display:block}
 .nav-book{min-height:44px;padding:8px 14px;font-size:14px;box-shadow:none}
 #btn-menu{display:inline-flex}
-@media (min-width:1100px){#btn-menu{display:none}}
+@media (min-width:1440px){#btn-menu{display:none}}
 @media (max-width:699px){.nav-book,#btn-shabbos,#btn-mute{display:none}}
 .shabbos-banner{padding-block:8px;background:linear-gradient(90deg,rgba(255,182,72,.22),rgba(255,182,72,.06));border-top:1px solid rgba(255,182,72,.35);color:var(--neon-core);font-size:14px}
 
@@ -425,8 +425,9 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 .pk.is-on{background:var(--paper);box-shadow:0 0 0 3px var(--foul),0 8px 0 rgba(0,0,0,.4)}
 .pk-candle,.pk-candle.is-on{background:var(--paper-warm)}
 .shabbos-line .pk.is-on{background:var(--paper-warm);box-shadow:0 0 0 3px var(--candle),0 0 26px rgba(255,182,72,.45)}
-.pk .bulb{margin:0;width:12px;height:12px;background:var(--alley);box-shadow:none}
-.pk.is-on .bulb{background:var(--foul);box-shadow:0 0 8px var(--foul)}
+.pk .bulb{position:absolute;top:16px;inset-inline-start:12px;margin:0;width:20px;height:20px;border:2px solid var(--ink);background:transparent;box-shadow:none}
+.pk .row-main{padding-inline-start:30px}
+.pk.is-on .bulb{border-color:var(--foul-paper);background:radial-gradient(circle,var(--foul) 0 5px,transparent 6px);box-shadow:0 0 0 3px rgba(227,57,46,.25)}
 .pk .row-main{padding-inline-end:76px}
 .pk .row-name{display:block;color:var(--ink);font-size:21px;line-height:1.15}
 .pk .row-dur{display:block;margin:4px 0 0;color:var(--olive)}
@@ -468,7 +469,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 .split{display:grid;gap:28px;margin-top:28px}
 @media (min-width:960px){.split{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start}}
 .range-row{display:flex;align-items:center;gap:12px}
-.range-row input{flex:1;min-width:0;accent-color:var(--foul)}
+.range-row input{flex:1;min-width:0;height:44px;accent-color:var(--foul)}
 .range-row output{min-width:4ch;font-family:var(--font-head);font-size:20px;font-variant-numeric:tabular-nums;color:var(--neon)}
 .range-ends{display:flex;justify-content:space-between;font-size:12px;color:var(--paper-dim)}
 .doc{position:relative;overflow:hidden;padding:clamp(20px,3vw,34px);border:1px solid var(--ink-dim);background:repeating-linear-gradient(180deg,transparent 0 27px,rgba(30,27,21,.06) 27px 28px),var(--paper);color:var(--ink);box-shadow:var(--shadow)}
@@ -484,9 +485,9 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 .doc-total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:10px;font-family:var(--font-head);font-size:22px;font-variant-numeric:tabular-nums}
 .doc-sanction{margin-top:10px;font-style:italic}
 .doc-sign{margin-top:18px;padding-top:6px;border-top:1px solid var(--ink);max-width:260px;font-size:13px}
-.doc-stamp{position:absolute;top:96px;inset-inline-end:5%;padding:4px 14px;border:4px double var(--foul);color:var(--foul-paper);font-family:var(--font-stencil);font-weight:700;font-size:clamp(20px,3vw,28px);letter-spacing:.12em;text-transform:uppercase;transform:rotate(-14deg);opacity:.85;pointer-events:none}
+.doc-stamp{position:static;flex:none;margin-block:6px;padding:4px 14px;border:4px double var(--foul);color:var(--foul-paper);font-family:var(--font-stencil);font-weight:700;font-size:clamp(20px,3vw,28px);letter-spacing:.12em;text-transform:uppercase;transform:rotate(-8deg);opacity:.85;pointer-events:none}
 @media (prefers-reduced-motion:no-preference){.doc-stamp.thump{animation:thump .3s cubic-bezier(.2,1.6,.4,1)}}
-@keyframes thump{0%{transform:rotate(-14deg) scale(1.6);opacity:0}100%{transform:rotate(-14deg) scale(1);opacity:.85}}
+@keyframes thump{0%{transform:rotate(-8deg) scale(1.6);opacity:0}100%{transform:rotate(-8deg) scale(1);opacity:.85}}
 .doc-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px}
 .doc-status{font-size:14px;font-weight:700;color:var(--foul-deep)}
 
@@ -554,23 +555,158 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 #dr-mute[aria-pressed="true"]{border-color:var(--khaki);color:var(--khaki)}
 .mini-total{display:none}
 @media (max-width:959px){
-  .mini-total{position:sticky;top:calc(var(--nav-live,64px) + 6px);z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 14px;padding-inline:14px 8px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:0 8px 18px rgba(0,0,0,.45)}
-  .mini-total b{font-family:var(--font-head);font-size:20px;font-weight:400;font-variant-numeric:tabular-nums}
-  .mini-total small{display:block;font-size:12px;color:var(--ink-dim)}
-  .mini-total .btn{min-height:44px;padding:8px 12px;font-size:14px}
+  .mini-total{position:sticky;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding-block:8px;padding-inline:14px 8px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:0 -6px 18px rgba(0,0,0,.45)}
+  .mini-sum-wrap{min-width:0}
+  .mini-total b{font-family:var(--font-head);font-size:20px;font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .mini-total small{display:block;overflow:hidden;font-size:12px;color:var(--ink-dim);text-overflow:ellipsis;white-space:nowrap}
+  .mini-total .btn{flex:none;min-height:44px;padding:8px 14px;font-size:15px;box-shadow:none}
 }
-@media (max-width:700px){
-  .board{padding:0;border:0;background:none;box-shadow:none}
-  .shabbos-line{padding:12px 10px}
-  .duo-line{padding:10px}
-  .shabbos-head{padding-inline:0}
-  .hero-grid{display:flex;flex-direction:column;gap:0}
+
+/* Form controls: one look in every engine (WebKit ignores min-height on native selects; under 16px iOS zooms) */
+input[type="text"],input[type="tel"],input[type="date"],input[type="time"],input[type="number"],select,textarea{font-size:16px}
+select{-webkit-appearance:none;appearance:none;padding-inline-end:42px;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+:root[dir="rtl"] select{background-position:16px 50%,22px 50%}
+input[type="date"],input[type="time"]{-webkit-appearance:none;appearance:none;display:block;min-height:48px;line-height:1.5;text-align:start}
+input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date-and-time-value{min-height:1.5em;text-align:start}
+.check,.field > label.check{display:flex;min-height:48px;align-items:center;margin-bottom:0;font-weight:400}
+.rush{gap:12px}
+.rush-text{display:grid;flex:1;min-width:0;line-height:1.25}
+.rush-text small{font-size:13px;font-weight:400;color:var(--paper-dim)}
+.ticket select{background-color:var(--paper-2)}
+
+/* Safe areas on the sides (landscape notch) */
+.wrap{padding-left:max(clamp(16px,4vw,40px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,40px),env(safe-area-inset-right,0px))}
+
+/* Phone-first: slim chrome, compact hero, folded lane cards */
+.draft-chip,.lane-toggle{display:none}
+.pk-candle:not(.is-more) .row-desc{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.more-btn{display:inline-flex;align-items:center;min-height:44px;padding:0;border:0;background:none;color:var(--ink);font:600 14px/1 var(--font-body);text-decoration:underline;cursor:pointer}
+.link-btn{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;padding:0;border:0;background:none;color:var(--neon);font:600 15px/1 var(--font-body);text-decoration:underline;cursor:pointer}
+.badge-early{background:var(--candle);color:var(--ink)}
+.hunt-note{max-width:62ch;margin-top:14px;padding:12px 14px;border-inline-start:4px solid var(--candle);background:rgba(255,182,72,.08);font-weight:500}
+.hunt-steps-label{margin-top:22px;font-family:var(--font-stencil);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--khaki)}
+:root[lang="he"] .hunt-steps-label{letter-spacing:0;font-size:15px}
+.hunt-steps-label + .hunt-steps{margin-top:10px}
+.none-note{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0;padding:14px;border:1px dashed var(--khaki);color:var(--paper)}
+.doc-sign-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px 18px;margin-top:18px}
+.doc-sign-row .doc-sign{flex:1 1 200px;margin-top:0}
+.mini-total.is-ticket{visibility:hidden}
+.draft-pop{border-top:1px solid var(--rule);background:var(--candle);color:var(--ink);font-size:14px}
+.draft-pop-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:8px}
+.draft-pop .tool{flex:none;border-color:var(--ink);color:var(--ink)}
+@media (max-width:699px){
+  :root{--nav-h:52px}
+  .nav-row{min-height:52px;gap:6px}
+  .logo-main{font-size:15px}
+  .logo-sub{font-size:8px;letter-spacing:.16em}
+  .preview{display:none}
+  .draft-chip{display:inline-flex;align-items:center;justify-content:center;flex:none;height:44px;padding:0 4px;border:0;background:transparent;cursor:pointer;font:700 11px/1 var(--font-stencil);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .draft-chip{position:relative;z-index:0;background:linear-gradient(var(--candle),var(--candle)) center/100% 24px no-repeat;border-radius:3px;padding-inline:8px}
+  :root[lang="he"] .draft-chip{letter-spacing:0;font-size:12px}
+  .lang .l-sep,:root[lang="en"] .lang .l-en,:root[lang="he"] .lang .l-he{display:none}
+  .lang span{opacity:1;color:var(--paper)}
+  .sec{padding-block:22px}
+  h2{font-size:26px}
+  #league .eyebrow,#what .eyebrow,#packages .eyebrow,#book .eyebrow{display:none}
+  body .foot{padding-block:24px}
+  .foot-grid{gap:6px}
+  .duo-note{display:none}
+  #pk-fridays{display:none}
+  .sheet-cell,.how li{padding:14px}
+  .hero-thesis,.hero-art .dude-board,#league .lead,#packages .lead,#what .lead,.how-title,.lane-sub{display:none}
+  .how{margin-top:12px}
+  .hero-copy > .eyebrow{font-size:11px;letter-spacing:.06em}
+  .hero-explain{font-size:13px}
+  .member-act{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .member-act .btn{min-height:44px;padding:8px 14px}
+  .member-played{font-size:13px}
+  #fs-event .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  #fs-event .ccard{min-height:48px;padding:6px 8px;font-size:14px;line-height:1.2}
+  .pk .row-desc,.row-desc{line-height:1.4}
+  .shabbos-head{padding-bottom:8px}
+  .board-group + .board-group{margin-top:16px}
+  .ticket .fine,.hint{font-size:12px}
+  .checks{gap:6px}
+  .check{padding:6px 10px}
+  .row.is-check .row-desc{-webkit-line-clamp:1}
+  #btn-book-this{display:none}
+  .pk-candle:not(.is-more) .row-desc{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .more-btn{display:inline-flex;align-items:center;min-height:44px;padding:0;border:0;background:none;color:var(--ink);font:600 14px/1 var(--font-body);text-decoration:underline;cursor:pointer}
+  .member{grid-template-columns:56px minmax(0,1fr);gap:4px 12px;padding:12px}
+  .member-act{grid-column:2;gap:8px}
+  .member-line{margin-top:4px;font-size:14px}
+  .member-name{font-size:21px}
+  .pk{padding:14px 12px 0}
+  .pk .row-desc{font-size:14px}
+  .row.is-check{padding:10px 6px}
+  .row.is-check .row-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px}
+  .ticket{padding:16px}
+  .fset{margin-bottom:16px}
+  #book-form > .fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
+  #book-form #date-free{grid-template-columns:minmax(0,1fr)}
+  .cards.two .ccard{min-height:46px;padding:8px 10px}
+
+  .hero{padding-block:12px 20px}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);column-gap:14px;row-gap:0;align-items:start}
   .hero-copy,.hero-art{display:contents}
-  .hero-copy > *{order:2}
-  .hero-copy > .eyebrow,.hero-copy > .marquee,.hero-copy > .marquee-live,.hero-copy > .now{order:0}
-  .poster{order:1;max-width:270px;margin-top:18px;align-self:flex-start}
-  .dude-board{order:3;max-width:240px;margin-top:28px;align-self:flex-start}
-  .doc-stamp{top:78px;inset-inline-end:14%;font-size:18px;border-width:3px}
+  .hero-copy > *{grid-column:1/-1}
+  .marquee{grid-row:1;font-size:12.2vw}
+  :root[lang="he"] .marquee{font-size:15vw}
+  .marquee-live{grid-row:2;margin-top:6px}
+  .poster{grid-column:1;grid-row:3/span 3;width:100%;max-width:none;margin:14px 0 0;padding:6px 6px 8px}
+  .plate{margin-top:6px;padding:6px}
+  .plate-top{font-size:9px;letter-spacing:.12em}
+  .plate-name{font-size:13px}
+  .plate-stat{font-size:11px}
+  .now{grid-column:2;grid-row:3;justify-self:stretch;grid-template-columns:auto;gap:2px;margin-top:14px;padding:8px 10px}
+  .now-label{max-width:none;font-size:10px}
+  .now-name{font-size:30px}
+  .hero-line{grid-column:2;grid-row:4;margin-top:10px;font-size:16px;line-height:1.25}
+  .hero-copy > .cta-row{grid-column:2;grid-row:5;flex-direction:column;gap:8px;margin-top:12px}
+  .cta-row .btn{width:100%;min-height:46px;padding-inline:8px}
+  .hero-copy > .eyebrow{grid-row:6;justify-self:start;margin:22px 0 0}
+  .hero-tag{grid-row:7}
+  .hero-thesis{grid-row:8}
+  .hero-from{grid-row:9;justify-self:start}
+  .hero-explain{grid-row:10}
+  .dude-board{grid-column:1/-1;grid-row:11;justify-self:start;max-width:200px;margin-top:22px}
+  .lane-head{margin-top:14px}
+  .lane{height:112px}
+
+  .occ-band{padding-block:10px}
+  .occ-row{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity}
+  .occ-title{flex:none;font-size:17px}
+  .occ{flex:none;scroll-snap-align:start}
+  .sheet-grid,.how{display:flex;gap:10px;overflow-x:auto;padding:0 0 8px;background:none;scroll-snap-type:x mandatory}
+  .sheet-cell,.how li{flex:0 0 82%;border:1px solid var(--rule-strong);scroll-snap-align:start}
+  .how-title{margin-top:28px}
+
+  .board{padding:0;border:0;background:none;box-shadow:none}
+  .pk-grid{grid-template-columns:1fr}
+  .shabbos-line{padding:16px 0 12px;border-inline:0;border-radius:0}
+  .shabbos-head{padding-inline:0}
+  .duo-line{padding:12px 0;border-inline:0}
+  .doc-stamp{font-size:18px;border-width:3px}
+  .night{padding:10px 12px}
+  .night-date{font-size:17px}
+  .night-times{font-size:13px}
+
+  .lane-sec{padding-block:4px;border-top:0}
+  .lane-toggle{display:grid;grid-template-columns:minmax(0,1fr) 24px;align-items:center;gap:2px 12px;width:calc(100% - 32px);min-height:58px;margin-inline:16px;padding:9px 14px;border:1px solid var(--rule-strong);border-inline-start:6px solid var(--maple);border-radius:4px;background:var(--alley-2);color:var(--paper);font:inherit;text-align:start;cursor:pointer}
+  .lane-t{font-family:var(--font-head);font-size:17px;line-height:1.15}
+  .lane-s{grid-column:1;font-size:13px;line-height:1.3;color:var(--paper-dim)}
+  .lane-chev{grid-column:2;grid-row:1/span 2;justify-self:center;width:11px;height:11px;border-right:2px solid var(--neon);border-bottom:2px solid var(--neon);transform:translateY(-3px) rotate(45deg);transition:transform .2s ease}
+  .lane-sec.is-open .lane-chev{transform:translateY(3px) rotate(-135deg)}
+  .lane-sec:not(.is-open) .lane-body{display:none}
+  .lane-sec.is-open{padding-bottom:28px}
+  .lane-sec.is-open .lane-body{padding-top:14px}
+  .lane-dup{display:none}
+}
+@media (max-width:359px){
+  .logo-main{font-size:13px}
+  .nav-row{gap:4px}
+  .tool{padding:0 8px}
+  .draft-chip{padding-inline:6px;font-size:10px}
 }
 .ob-head + .ob-status{margin-top:12px}
 .ob-status{font-family:var(--font-head);font-size:21px;color:var(--ink)}
@@ -581,11 +717,11 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 .foot{padding-block:40px;border-top:1px solid var(--rule);font-size:14px;color:var(--paper-dim)}
 .foot-grid{display:grid;gap:12px}
 .foot-strong{color:var(--paper);font-family:var(--font-head);font-size:18px}
-.mbar{position:fixed;z-index:58;left:0;right:0;bottom:0;display:flex;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(17,20,16,.97);border-top:1px solid var(--rule-strong);transition:transform .25s ease}
-.mbar .btn{flex:1;min-height:46px;padding-inline:10px;font-size:15px}
+.mbar{position:fixed;z-index:58;left:0;right:0;bottom:0;display:flex;gap:8px;padding:7px max(16px,env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(17,20,16,.97);border-top:1px solid var(--rule-strong);transition:transform .25s ease}
+.mbar .btn{flex:1;min-height:46px;padding-block:0;padding-inline:10px;font-size:15px}
 .mbar.is-away{transform:translateY(115%)}
 @media (min-width:721px){.mbar{display:none}}
-@media (max-width:720px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}}
+@media (max-width:720px){body{padding-bottom:calc(61px + env(safe-area-inset-bottom,0px))}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 
@@ -652,7 +788,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 9h3v12H8zM13 9h3v12h-3z" fill="currentColor"/><path d="M9.5 3c1.2 1.4 1.2 2.6 0 4-1.2-1.4-1.2-2.6 0-4zM14.5 3c1.2 1.4 1.2 2.6 0 4-1.2-1.4-1.2-2.6 0-4z" fill="currentColor"/></svg>
         <span class="tool-label" data-i18n="shabbosBtn"></span>
       </button>
-      <button type="button" class="tool lang" id="btn-lang" data-i18n-attr="aria-label:langAria"><span class="l-en">EN</span>|<span class="l-he">עב</span></button>
+      <button type="button" class="draft-chip" id="draft-chip" aria-expanded="false" aria-controls="draft-pop" data-i18n="draftChip" hidden></button>
+      <button type="button" class="tool lang" id="btn-lang" data-i18n-attr="aria-label:langAria"><span class="l-en">EN</span><span class="l-sep" aria-hidden="true">|</span><span class="l-he">עב</span></button>
       <button type="button" class="tool" id="btn-mute" aria-pressed="false" data-i18n-attr="aria-label:muteLabel">
         <svg class="ico-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <svg class="ico-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -661,7 +798,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
       <button type="button" class="tool" id="btn-menu" aria-expanded="false" aria-controls="drawer" data-i18n="menuBtn"></button>
     </div>
   </div>
-  <div class="shabbos-banner" id="shabbos-banner" role="status" hidden><div class="wrap banner-row"><span class="candle small" aria-hidden="true"><span class="flame"></span></span><span data-i18n="banner"></span><span class="candle small" aria-hidden="true"><span class="flame"></span></span></div></div>
+  <div class="draft-pop" id="draft-pop" hidden><div class="wrap draft-pop-row"><p data-i18n="previewRibbon"></p><button type="button" class="tool" id="draft-hide" data-i18n="draftHide"></button></div></div>
+  <div class="shabbos-banner" id="shabbos-banner" role="status" hidden><div class="wrap banner-row"><span class="candle small" aria-hidden="true"><span class="flame"></span></span><span id="banner-text"></span><span class="candle small" aria-hidden="true"><span class="flame"></span></span></div></div>
 </header>
 
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
@@ -863,7 +1001,6 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
       <h2 id="pk-title" data-i18n="pkgTitle"></h2>
       <p class="lead" data-i18n="pkgLead"></p>
       <div class="counter">
-        <div class="mini-total" id="mini-total" aria-hidden="true"><div><small id="mini-pkg"></small><b><span data-i18n="miniTotal"></span> <span id="mini-sum"></span></b></div><a class="btn btn-ghost-ink" href="#ticket" tabindex="-1" data-i18n="miniSheet"></a></div>
         <div class="board">
           <fieldset class="board-group">
             <legend class="board-legend" data-i18n="pkgLegend"></legend>
@@ -883,7 +1020,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
             </div>
             <p class="board-counter" id="pk-fridays"></p>
             <div class="pk-grid" style="margin-top:12px">
-              <label class="row pk pk-candle" data-pkg-row="shabbos" for="pkg-shabbos"><input type="radio" name="pkg" id="pkg-shabbos" value="shabbos"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="pkg_shabbos"></span><span class="row-dur" data-i18n="pkg_shabbos_dur"></span><span class="row-desc" data-i18n="pkg_shabbos_desc"></span></span><span class="row-price"></span></label>
+              <label class="row pk pk-candle" data-pkg-row="shabbos" for="pkg-shabbos"><input type="radio" name="pkg" id="pkg-shabbos" value="shabbos"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="pkg_shabbos"></span><span class="row-dur" data-i18n="pkg_shabbos_dur"></span><span class="row-desc" id="shabbos-desc" data-i18n="pkg_shabbos_desc"></span><button type="button" class="more-btn" id="shabbos-more" aria-expanded="false" aria-controls="shabbos-desc"></button></span><span class="row-price"></span></label>
               <label class="row pk pk-candle" data-pkg-row="motzei" for="pkg-motzei"><input type="radio" name="pkg" id="pkg-motzei" value="motzei"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="pkg_motzei"></span><span class="row-dur" data-i18n="pkg_motzei_dur"></span><span class="row-desc" data-i18n="pkg_motzei_desc"></span></span><span class="row-price"></span></label>
             </div>
             <p class="fine" data-i18n="shabbosFine"></p>
@@ -903,9 +1040,10 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
             <div class="hours" id="cut-hours-wrap" hidden><label for="addon-cut-hours" data-i18n="hoursLabel"></label><input type="number" id="addon-cut-hours" min="1" max="6" step="1" value="1" inputmode="numeric"></div>
             <label class="row is-check" data-addon-row="ringer" for="addon-ringer"><input type="checkbox" id="addon-ringer" value="ringer"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="addon_ringer"></span><span class="row-desc" data-i18n="addon_ringer_desc"></span><span class="row-note" hidden></span></span><span class="row-price"></span></label>
             <label class="row is-check" data-addon-row="foulset" for="addon-foulset"><input type="checkbox" id="addon-foulset" value="foulset"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="addon_foulset"></span><span class="row-desc" data-i18n="addon_foulset_desc"></span><span class="row-note" hidden></span></span><span class="row-price"></span></label>
-            <label class="row is-check" data-addon-row="hunt" for="addon-hunt"><input type="checkbox" id="addon-hunt" value="hunt"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="addon_hunt"></span><span class="row-desc" data-i18n="addon_hunt_desc"></span><span class="row-note" hidden></span></span><span class="row-price"></span></label>
+            <label class="row is-check" data-addon-row="hunt" for="addon-hunt"><input type="checkbox" id="addon-hunt" value="hunt"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="addon_hunt"></span><span class="badge badge-early" data-i18n="earlyBadge"></span><span class="row-desc" data-i18n="addon_hunt_desc"></span><span class="row-note" hidden></span></span><span class="row-price"></span></label>
             <label class="row is-check" data-addon-row="gram" for="addon-gram"><input type="checkbox" id="addon-gram" value="gram"><span class="bulb" aria-hidden="true"></span><span class="row-main"><span class="row-name" data-i18n="addon_gram"></span><span class="row-desc" data-i18n="addon_gram_desc"></span><span class="row-note" hidden></span></span><span class="row-price"></span></label>
           </fieldset>
+          <div class="mini-total" id="mini-total"><div class="mini-sum-wrap"><small id="mini-pkg"></small><b><span data-i18n="miniTotal"></span> <span id="mini-sum"></span></b></div><button type="button" class="btn btn-foul" id="mini-book" data-i18n="bookThis"></button></div>
         </div>
 
         <aside class="ticket" id="ticket" tabindex="-1" aria-labelledby="ticket-title">
@@ -922,7 +1060,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec" id="ruling" aria-labelledby="rul-title">
+  <section class="sec lane-sec" id="ruling" data-lane="ruling" aria-labelledby="rul-title">
     <div class="wrap">
       <p class="eyebrow" data-i18n="rulEyebrow"></p>
       <h2 id="rul-title" data-i18n="rulTitle"></h2>
@@ -931,7 +1069,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
         <form class="form-card" id="ruling-form" novalidate>
           <div class="fields" style="grid-template-columns:1fr">
             <div class="field"><label for="r-event" data-i18n="rEvent"></label><select id="r-event"></select></div>
-            <div class="field"><label for="r-guests" data-i18n="rGuests"></label><input type="number" id="r-guests" min="1" max="2000" step="1" value="180" inputmode="numeric"></div>
+            <div class="field"><label for="r-guests" data-i18n="rGuests"></label><input type="number" id="r-guests" min="1" max="2000" step="1" value="180" inputmode="numeric" aria-describedby="err-r-guests"><p class="err" id="err-r-guests" hidden></p></div>
             <div class="field">
               <label for="r-chaos" data-i18n="rChaos"></label>
               <div class="range-row"><input type="range" id="r-chaos" min="1" max="10" step="1" value="7"><output id="r-chaos-out" for="r-chaos"></output></div>
@@ -955,20 +1093,19 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
           <p class="doc-court" data-i18n="rDocCourt"></p>
           <h3 class="doc-no" id="r-no"></h3>
           <p class="doc-date" id="r-date"></p>
-          <span class="doc-stamp" id="r-stamp" aria-hidden="true" data-i18n="rStamp"></span>
           <ul class="doc-clauses" id="r-clauses"></ul>
           <div class="doc-order"><b data-i18n="rOrder"></b><p id="r-order"></p>
             <p class="doc-total"><span data-i18n="lblEstimate"></span><output id="r-total"></output></p>
           </div>
           <p class="doc-sanction" data-i18n="rSanction"></p>
-          <p class="doc-sign" data-i18n="rSigned"></p>
+          <div class="doc-sign-row"><p class="doc-sign" data-i18n="rSigned"></p><span class="doc-stamp" id="r-stamp" aria-hidden="true" data-i18n="rStamp"></span></div>
           <div class="doc-actions"><button type="button" class="btn btn-foul" id="r-apply" data-i18n="rApply"></button><p class="doc-status" id="r-status" aria-live="polite"></p></div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-counter" id="gram" aria-labelledby="gram-title">
+  <section class="sec sec-counter lane-sec" id="gram" data-lane="gram" aria-labelledby="gram-title">
     <div class="wrap">
       <p class="eyebrow" data-i18n="gramEyebrow"></p>
       <h2 id="gram-title" data-i18n="gramTitle"></h2>
@@ -979,6 +1116,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
             <div class="cards">
               <label class="ccard" for="g-occ-birthday"><input type="radio" name="g-occ" id="g-occ-birthday" value="birthday" checked><span data-i18n="gOcc_birthday"></span></label>
               <label class="ccard" for="g-occ-mitzvah"><input type="radio" name="g-occ" id="g-occ-mitzvah" value="mitzvah"><span data-i18n="gOcc_mitzvah"></span></label>
+              <label class="ccard" for="g-occ-batmitzvah"><input type="radio" name="g-occ" id="g-occ-batmitzvah" value="batmitzvah"><span data-i18n="gOcc_batmitzvah"></span></label>
               <label class="ccard" for="g-occ-wedding"><input type="radio" name="g-occ" id="g-occ-wedding" value="wedding"><span data-i18n="gOcc_wedding"></span></label>
               <label class="ccard" for="g-occ-pep"><input type="radio" name="g-occ" id="g-occ-pep" value="pep"><span data-i18n="gOcc_pep"></span></label>
               <label class="ccard" for="g-occ-roast"><input type="radio" name="g-occ" id="g-occ-roast" value="roast"><span data-i18n="gOcc_roast"></span></label>
@@ -988,7 +1126,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
           <div class="fields">
             <div class="field"><label for="g-to" data-i18n="gTo"></label><input type="text" id="g-to" aria-describedby="err-g-to"><p class="err" id="err-g-to" hidden></p></div>
             <div class="field"><label for="g-from" data-i18n="gFrom"></label><input type="text" id="g-from" aria-describedby="err-g-from"><p class="err" id="err-g-from" hidden></p></div>
-            <div class="field" id="g-age-wrap"><label for="g-age" data-i18n="gAge"></label><input type="number" id="g-age" min="1" max="120" step="1" inputmode="numeric"></div>
+            <div class="field" id="g-age-wrap"><label for="g-age" data-i18n="gAge"></label><input type="number" id="g-age" min="1" max="120" step="1" inputmode="numeric" aria-describedby="err-g-age"><p class="err" id="err-g-age" hidden></p></div>
             <fieldset class="fset field" style="margin:0"><legend data-i18n="gLang"></legend>
               <div class="cards two">
                 <label class="ccard" for="g-lang-en"><input type="radio" name="g-lang" id="g-lang-en" value="en" checked><span data-i18n="gLangEn"></span></label>
@@ -999,7 +1137,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
             <div class="field" id="g-rule-custom-wrap" hidden><label for="g-rule-custom" data-i18n="gRuleCustom"></label><input type="text" id="g-rule-custom" maxlength="80" data-i18n-attr="placeholder:gRuleCustomPh" aria-describedby="err-g-rule"><p class="err" id="err-g-rule" hidden></p></div>
             <div class="field field-wide"><label for="g-notes" data-i18n="gNotes"></label><textarea id="g-notes" rows="3" maxlength="250" data-i18n-attr="placeholder:gNotesPh" aria-describedby="g-count"></textarea><p class="count" id="g-count">0/250</p></div>
             <div class="field"><label for="g-phone" data-i18n="fPhone"></label><input type="tel" id="g-phone" autocomplete="tel" inputmode="tel" dir="ltr" placeholder="050-123-4567" aria-describedby="err-g-phone"><p class="err" id="err-g-phone" hidden></p></div>
-            <div class="field"><label class="check" for="g-rush"><input type="checkbox" id="g-rush"><span id="g-rush-label"></span></label></div>
+            <div class="field field-wide"><label class="check rush" for="g-rush"><input type="checkbox" id="g-rush"><span class="rush-text"><b data-i18n="gRushTitle"></b><small data-i18n="gRushSub"></small></span><span class="check-price" id="g-rush-price"></span></label></div>
           </div>
           <p class="gram-price" id="g-price"></p>
           <div class="form-actions"><button type="submit" class="btn btn-foul" data-i18n="gSubmit"></button><p class="fine" data-i18n="formFine"></p></div>
@@ -1014,12 +1152,14 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec" id="hunt" aria-labelledby="hunt-title">
+  <section class="sec lane-sec" id="hunt" data-lane="hunt" aria-labelledby="hunt-title">
     <div class="wrap hunt-grid">
       <div>
         <p class="eyebrow" data-i18n="huntEyebrow"></p>
-        <h2 id="hunt-title" data-i18n="huntTitle"></h2>
+        <h2 id="hunt-title"><span data-i18n="huntTitle"></span> <span class="badge badge-early" data-i18n="earlyBadge"></span></h2>
         <p class="hunt-sub" data-i18n="huntSub"></p>
+        <p class="hunt-note" data-i18n="huntNote"></p>
+        <p class="hunt-steps-label" data-i18n="huntStepsLabel"></p>
         <ol class="hunt-steps">
           <li><strong data-i18n="hunt1T"></strong><p data-i18n="hunt1"></p></li>
           <li><strong data-i18n="hunt2T"></strong><p data-i18n="hunt2"></p></li>
@@ -1052,7 +1192,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec sec-alley" id="bowl" aria-labelledby="bowl-title">
+  <section class="sec sec-alley lane-sec" id="bowl" data-lane="bowl" aria-labelledby="bowl-title">
     <div class="wrap bowl-grid">
       <div class="bowl-head">
         <p class="eyebrow" data-i18n="bowlEyebrow"></p>
@@ -1074,7 +1214,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec" id="quiz" aria-labelledby="quiz-title">
+  <section class="sec lane-sec" id="quiz" data-lane="quiz" aria-labelledby="quiz-title">
     <div class="wrap">
       <p class="eyebrow" data-i18n="quizEyebrow"></p>
       <h2 id="quiz-title" data-i18n="quizTitle"></h2>
@@ -1120,7 +1260,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec sec-alley" id="casting" aria-labelledby="cast-title" data-variant="duo">
+  <section class="sec sec-alley lane-sec" id="casting" data-lane="casting" aria-labelledby="cast-title" data-variant="duo">
     <div class="wrap">
       <p class="eyebrow" data-i18n="castEyebrow"></p>
       <h2 id="cast-title" data-i18n="castTitle"></h2>
@@ -1163,7 +1303,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec" id="naf" aria-labelledby="naf-title">
+  <section class="sec lane-sec" id="naf" data-lane="naf" aria-labelledby="naf-title">
     <div class="wrap naf-grid">
       <div class="polaroids">
         <figure class="polaroid p1"><img data-photo="smile" src="../assets/naf-smile.jpg" width="705" height="900" loading="lazy" alt="Naf grinning into the camera in a bright office with framed certificates on the wall" data-i18n-attr="alt:altSmile"><figcaption data-i18n="capSmile"></figcaption></figure>
@@ -1186,7 +1326,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec" id="reviews" aria-labelledby="rev-title">
+  <section class="sec lane-sec" id="reviews" data-lane="reviews" aria-labelledby="rev-title">
     <div class="wrap">
       <p class="eyebrow" data-i18n="revEyebrow"></p>
       <h2 id="rev-title" data-i18n="revTitle"></h2>
@@ -1199,7 +1339,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
     </div>
   </section>
 
-  <section class="sec" id="faq" aria-labelledby="faq-title">
+  <section class="sec lane-sec" id="faq" data-lane="faq" aria-labelledby="faq-title">
     <div class="wrap">
       <p class="eyebrow" data-i18n="faqEyebrow"></p>
       <h2 id="faq-title" data-i18n="faqTitle"></h2>
@@ -1234,7 +1374,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
         </fieldset>
         <div class="fields">
           <div class="field field-wide"><label for="f-pkg" data-i18n="fPackage"></label><select id="f-pkg"></select></div>
-          <div class="field field-wide">
+          <p class="field-wide none-note" id="none-note" hidden><span data-i18n="noneNote"></span> <a class="btn btn-foul" href="#gram" id="none-link" data-i18n="noneLink"></a></p>
+          <div class="field field-wide" data-order>
             <div class="fields" id="date-free">
               <div class="field"><label for="f-date" id="f-date-label"></label><input type="date" id="f-date" aria-describedby="hint-date date-chips err-date"><p class="hint" id="hint-date" data-i18n="fDateHint"></p></div>
               <div class="chips field-wide" id="date-chips" aria-live="polite" hidden></div>
@@ -1243,11 +1384,11 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
               <legend id="night-legend"></legend>
               <p class="fridays-left" id="fridays-left" style="margin-bottom:10px"></p>
               <div class="nights" id="nights"></div>
+              <button type="button" class="link-btn" id="nights-more" aria-controls="nights" data-i18n="nightsMore" hidden></button>
               <p class="hint" id="night-city"></p>
             </fieldset>
             <div class="field" id="time-field" style="margin-top:14px;max-width:340px"><label for="f-time" data-i18n="fTime"></label><input type="time" id="f-time" step="900" aria-describedby="hint-time err-date"><p class="hint" id="hint-time"></p></div>
             <p class="err" id="err-date" hidden></p>
-            <p class="hint" id="none-note" data-i18n="noneNote" hidden></p>
           </div>
           <div class="field" data-live><label for="f-city" data-i18n="fCity"></label><select id="f-city" data-cities aria-describedby="err-city"></select><p class="err" id="err-city" hidden></p></div>
           <div class="field" data-live><label for="f-venue" data-i18n="fVenue"></label><input type="text" id="f-venue" data-i18n-attr="placeholder:fVenuePh"></div>
@@ -1270,23 +1411,23 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
               <label class="ccard" for="f-sound-no"><input type="radio" name="f-sound" id="f-sound-no" value="no"><span data-i18n="no"></span></label>
             </div>
           </fieldset>
-          <fieldset class="fset field-wide" style="margin:0">
+          <fieldset class="fset field-wide" style="margin:0" data-order>
             <legend data-i18n="fAddons"></legend>
             <div class="checks">
               <label class="check" data-faddon="cut" for="f-addon-cut"><input type="checkbox" id="f-addon-cut" value="cut"><span><span data-i18n="addon_cut"></span> <span class="check-price"></span><span class="check-note" hidden></span></span></label>
               <label class="check" data-faddon="ringer" for="f-addon-ringer"><input type="checkbox" id="f-addon-ringer" value="ringer"><span><span data-i18n="addon_ringer"></span> <span class="check-price"></span><span class="check-note" hidden></span></span></label>
               <label class="check" data-faddon="foulset" for="f-addon-foulset"><input type="checkbox" id="f-addon-foulset" value="foulset"><span><span data-i18n="addon_foulset"></span> <span class="check-price"></span><span class="check-note" hidden></span></span></label>
-              <label class="check" data-faddon="hunt" for="f-addon-hunt"><input type="checkbox" id="f-addon-hunt" value="hunt"><span><span data-i18n="addon_hunt"></span> <span class="check-price"></span><span class="check-note" hidden></span></span></label>
+              <label class="check" data-faddon="hunt" for="f-addon-hunt"><input type="checkbox" id="f-addon-hunt" value="hunt"><span><span data-i18n="addon_hunt"></span> <span class="badge badge-early" data-i18n="earlyBadge"></span> <span class="check-price"></span><span class="check-note" hidden></span></span></label>
               <label class="check" data-faddon="gram" for="f-addon-gram"><input type="checkbox" id="f-addon-gram" value="gram"><span><span data-i18n="addon_gram"></span> <span class="check-price"></span><span class="check-note" hidden></span></span></label>
               <div class="check-hours" id="f-cut-hours-wrap" hidden><label for="f-cut-hours" data-i18n="hoursLabel"></label><input type="number" id="f-cut-hours" min="1" max="6" step="1" value="1" inputmode="numeric"></div>
             </div>
           </fieldset>
-          <div class="field"><label for="f-name" data-i18n="fName"></label><input type="text" id="f-name" autocomplete="name" aria-describedby="err-name"><p class="err" id="err-name" hidden></p></div>
-          <div class="field"><label for="f-phone" data-i18n="fPhone"></label><input type="tel" id="f-phone" autocomplete="tel" inputmode="tel" dir="ltr" placeholder="050-123-4567" aria-describedby="err-phone"><p class="err" id="err-phone" hidden></p></div>
-          <div class="field field-wide"><label for="f-notes" data-i18n="fNotes"></label><textarea id="f-notes" rows="3" data-i18n-attr="placeholder:notesPh"></textarea></div>
+          <div class="field" data-order><label for="f-name" data-i18n="fName"></label><input type="text" id="f-name" autocomplete="name" aria-describedby="err-name"><p class="err" id="err-name" hidden></p></div>
+          <div class="field" data-order><label for="f-phone" data-i18n="fPhone"></label><input type="tel" id="f-phone" autocomplete="tel" inputmode="tel" dir="ltr" placeholder="050-123-4567" aria-describedby="err-phone"><p class="err" id="err-phone" hidden></p></div>
+          <div class="field field-wide" data-order><label for="f-notes" data-i18n="fNotes"></label><textarea id="f-notes" rows="3" data-i18n-attr="placeholder:notesPh"></textarea></div>
         </div>
         <p class="err err-summary" id="err-summary" role="alert" hidden></p>
-        <div class="form-actions"><button type="submit" class="btn btn-foul" id="btn-submit"></button><p class="fine" data-i18n="formFine"></p></div>
+        <div class="form-actions" data-order><button type="submit" class="btn btn-foul" id="btn-submit"></button><p class="fine" data-i18n="formFine"></p></div>
         <div class="outbox" id="out-book" tabindex="-1" hidden></div>
       </form>
     </div>
@@ -1353,7 +1494,6 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "heroThesis__solo": "Book Walter for your wedding, bar or bat mitzvah, club night or dinner party, anywhere in Israel. He'll enforce the rules.",
 "ctaBook": "Book Walter",
 "ctaPackages": "See packages",
-"heroExplain": "Never seen The Big Lebowski? Walter Sobchak is the Dude's bowling buddy: big, loud, loyal, obsessed with rules, and he doesn't roll on Shabbat. Naf plays him live, vest and all.",
 "plaqueTop": "Bowler of the month",
 "plaqueName": "Naf Steinmetz as Walter",
 "plaqueStat": "Fouls tolerated: 0",
@@ -1473,7 +1613,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "ticketWaitlist": "Waitlist request. You pay nothing until our Dude is cast and your date is confirmed.",
 "bookThis": "Book this",
 "joinWaitlist": "Join the waitlist",
-"smallPrint": "Prices in ₪, draft. Travel in the center is included; {travel}; anywhere else we quote. Regular packages never run on Shabbat or chag.",
+"smallPrint": "Prices in ₪{draft}. Travel in the center is included; {travel}; anywhere else we quote. Regular packages never run on Shabbat or chag.",
 "bowlEyebrow": "Lane 7 · Open play",
 "bowlTitle": "Bowl a frame with Walter",
 "bowlLead": "Five frames, real scoring. Lock your aim, then release. Release in the red and you've stepped over the line.",
@@ -1696,7 +1836,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "foot3": "© Naf Steinmetz",
 "footShabbos": "Closed on Shabbat. Obviously.",
 "navGram": "Walter-gram",
-"heroFrom": "From {price} · Replies within a few hours on WhatsApp",
+"heroFrom": "From {price} · Requests go to Naf on WhatsApp",
 "occTitle": "What's the occasion?",
 "occ_wedding": "Wedding",
 "occ_mitzvah": "Bar/Bat Mitzvah",
@@ -1704,8 +1844,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "occ_friday": "Friday night",
 "occ_birthday": "Birthday",
 "occ_office": "Office",
-"occSet": "Booking set to: {occ}.",
-"occSetFriday": "Booking set to: Friday night, with the Shomer Shabbos Special.",
+"occSet": "Form set to: {occ}.",
+"occSetFriday": "Form set to: Friday night, with the Shomer Shabbos Special.",
 "occBookLink": "Finish booking",
 "occTag_wedding": "This is not 'Nam. This is a wedding. There are rules.",
 "occTag_mitzvah": "This is not 'Nam. This is a bar mitzvah. There are rules.",
@@ -1715,14 +1855,14 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "occTag_office": "This is not 'Nam. This is the office party. There are rules.",
 "evFriday": "Friday-night dinner",
 "addon_hunt": "Where's Walter?",
-"addon_hunt_desc": "The party game: guests hunt Walter for ten frames with a photo and a code word, scored like bowling.",
+"addon_hunt_desc": "Early access. The party game: guests hunt Walter for ten frames with a photo and a code word, scored like bowling. Naf confirms availability.",
 "noteNoPhonesShabbos": "Phones are in the box on Shabbat",
 "ticketCity": "Where's the party?",
 "lblTravel": "Travel",
 "travelIncluded": "Included",
 "travelQuote": "We'll quote",
 "depositLine": "{deposit} holds the date. The rest at the event.",
-"pkgFridaysLeft": "Fridays left in {year}: {n}. One Walter.",
+"pkgFridaysLeft": "{n} Fridays left on the {year} calendar.",
 "rulEyebrow": "Not sure which package?",
 "rulTitle": "Walter's Ruling",
 "rulLead": "Five questions. One binding opinion. Walter has never been wrong. Am I wrong?",
@@ -1760,7 +1900,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "gramLead": "Like a celebrity shout-out, except this one comes with rules. Fill it in and watch the script write itself.",
 "gOccLegend": "What's it for?",
 "gOcc_birthday": "Birthday",
-"gOcc_mitzvah": "Bar/Bat Mitzvah",
+"gOcc_mitzvah": "Bar Mitzvah",
 "gOcc_wedding": "Wedding",
 "gOcc_pep": "Pep talk",
 "gOcc_roast": "Roast",
@@ -1782,7 +1922,6 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "rule_custom": "Write my own…",
 "gNotes": "Anything else Walter should know?",
 "gNotesPh": "Names, inside jokes, what not to mention",
-"gRush": "Rush it: usually within 24 hours (+{price})",
 "gPriceLine": "{price} · Usually delivered within {h} hours on WhatsApp",
 "gDelivery": "Usually within {h} hours on WhatsApp",
 "gSubmit": "Prepare my Walter-gram order",
@@ -1809,7 +1948,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "gPh_rule": "[rule]",
 "gS_open": "{to}. This is Walter.",
 "gS_birthday": "Today is your birthday. That's not an opinion. That's the calendar.",
-"gS_birthdayAge": "Today you are {age}. {age} years and you never once crossed the line. Mostly.",
+"gS_birthdayAge": "Today you are {age}. {years} and you never once crossed the line. Mostly.",
 "gS_mitzvah": "Today you're called up. 3,000 years of beautiful tradition, and now it's your turn. Don't rush the haftarah.",
 "gS_mitzvahAge": "Today you are {age}. 3,000 years of beautiful tradition, and now it's your turn. Don't rush the haftarah.",
 "gS_wedding": "Today you get married. Marriage is not 'Nam. There are rules. Rule one: your spouse is right. Am I wrong?",
@@ -1818,7 +1957,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "gS_line": "{from} tells me you crossed the line. Over the line! Mark it zero. You know what you did.",
 "gS_rule": "Walter's rule for you: {rule}. That's not a suggestion.",
 "gS_close_birthday": "Happy birthday. There are rules. Walter out.",
-"gS_close_mitzvah": "Mazal tov. Shomer Shabbos. Walter out.",
+"gS_close_mitzvah": "Mazal tov. See you at the kiddush. Walter out.",
 "gS_close_wedding": "Mazal tov to you both. Calmer than you are? Nobody. Walter out.",
 "gS_close_pep": "Go get 'em. Calmer than you are. Walter out.",
 "gS_close_roast": "I say this with love. Mostly. Walter out.",
@@ -1827,7 +1966,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "huntTitle": "Where's Walter?",
 "huntSub": "The party game where the party is the board.",
 "hunt1T": "Scan",
-"hunt1": "Guests scan a QR code at the door. Nothing to install.",
+"hunt1": "Guests will scan a QR code at the door. Nothing to install.",
 "hunt2T": "Hunt",
 "hunt2": "Walter roams the room. Find him ten times: ten frames.",
 "hunt3T": "Prove it",
@@ -1835,10 +1974,10 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "hunt4T": "Score",
 "hunt4": "Scored like bowling, all the way to a perfect 300.",
 "hunt5T": "Watch",
-"hunt5": "A lane monitor on the venue screen shows the standings live.",
+"hunt5": "A lane monitor on the venue screen will show the standings.",
 "hunt6T": "Keep",
-"hunt6": "The host keeps the album: every guest's photo with Walter.",
-"huntPrice": "Add it to any live package: {price}.",
+"hunt6": "The host will keep the album: every guest's photo with Walter.",
+"huntPrice": "Early-access price: {price} with any live package. Naf confirms availability.",
 "huntAdd": "Add to my score sheet",
 "huntDemo": "Try the demo",
 "huntDemoSoon": "Demo link coming.",
@@ -1894,12 +2033,60 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "laneWord": "Lane",
 "errGuests": "Guests has to be 1 or more.",
 "fDateOptional": "When is it for? (optional)",
-"noneNote": "Video only: no date, city or Shabbat rules. Write the script in the Walter-gram builder above.",
+"noneNote": "The Walter-gram has its own order form, with a live script preview.",
 "miniTotal": "Total",
 "miniSheet": "Score sheet",
 "minWord": "min",
 "hourWord": "hour",
-"hoursWord": "hours"
+"hoursWord": "hours",
+"draftChip": "Draft",
+"draftHide": "Got it, hide this",
+"gRushTitle": "Rush it",
+"gRushSub": "Usually within 24 hours",
+"lane_ruling": "Not sure which package? Walter will rule on it.",
+"lane_gram": "A personal video from Walter. Great gift, mild threats.",
+"lane_hunt": "Early access: the party game where your guests hunt Walter.",
+"lane_bowl": "Five frames, real scoring. Do not step over the line.",
+"lane_quiz": "Four questions. One Lebowski. No appeals.",
+"lane_casting": "Walter needs his Dude. Could it be you?",
+"lane_naf": "The man in the vest. Also a barber.",
+"lane_reviews": "What the envelope box had to say.",
+"lane_faq": "Shabbat, kosher, haircuts, Hebrew. Answered.",
+"moreBtn": "Read more",
+"lessBtn": "Show less",
+"heroExplain__duo": "Never seen The Big Lebowski? Walter Sobchak is the Dude's bowling buddy: big, loud, loyal, obsessed with rules, and he doesn't roll on Shabbat. Naf plays him live, vest and all.",
+"heroExplain__solo": "Never seen The Big Lebowski? Walter Sobchak is the Dude's bowling buddy: big, loud, loyal, obsessed with rules, and he doesn't roll on Shabbat. Naf plays him live, vest and all.",
+"draftSuffix": ", draft",
+"earlyBadge": "Early access",
+"huntNote": "Try the demo now. The live version (every guest's phone, live lane monitor) is being built. Book it and Naf confirms availability.",
+"huntStepsLabel": "How the live version will work",
+"rEv_evWedding": "wedding",
+"rEv_evMitzvah": "bar or bat mitzvah",
+"rEv_evClub": "club night",
+"rEv_evFriday": "Friday-night dinner",
+"rEv_evBirthday": "birthday",
+"rEv_evOffice": "office party",
+"rEv_evDinner": "dinner party",
+"rW_event_one": "the petitioner reports one (1) {event}, with 1 guest in attendance;",
+"errRGuests": "Guests has to be a whole number from 1 to 2,000.",
+"rAppliedReplaced": "Ruling applied. It replaced your earlier extras: {list}.",
+"gOcc_batmitzvah": "Bat Mitzvah",
+"gS_batmitzvah": "Today you're a bat mitzvah. 3,000 years of beautiful tradition, and now it's your turn.",
+"gS_batmitzvahAge": "Today you are {age}, and a bat mitzvah. 3,000 years of beautiful tradition, and now it's your turn.",
+"gS_close_batmitzvah": "Mazal tov. The rules are yours now. Walter out.",
+"errAge": "Age has to be a whole number from 1 to 120.",
+"noneLink": "Order it here →",
+"nightsMore": "Show more dates",
+"errStuckChag": "Shabbos runs into the chag that week. Walter would be stuck till Monday. Ask Naf.",
+"bannerPreview": "Shabbat mode preview: this is how the page looks on Shabbat. Walter answers after Havdalah.",
+"v_omer": "Sefirat HaOmer: many families don't hold weddings now. Check with your rabbi.",
+"v_threeweeks": "The Three Weeks: many families avoid weddings and live music now. Check with your rabbi.",
+"v_shoah": "Yom HaShoah. A day of remembrance; most families don't hold celebrations.",
+"v_zikaron": "Yom HaZikaron, Memorial Day. Weddings and parties are normally avoided.",
+"v_atzmaut": "Yom HaAtzmaut. Festive, and busy: book early.",
+"v_gedaliah": "Tzom Gedaliah, a minor fast. Some families avoid celebrations.",
+"v_tevet": "The Tenth of Tevet, a minor fast. Some families avoid celebrations.",
+"v_esther": "Ta'anit Esther, a minor fast. Some families avoid celebrations."
 },
 "he": {
 "navAria": "ניווט",
@@ -1930,12 +2117,11 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "heroThesis__solo": "הזמינו את וולטר לחתונה, לבר או בת מצווה, למסיבה או לארוחת ערב, בכל הארץ. הוא כבר ידאג לחוקים.",
 "ctaBook": "להזמין את וולטר",
 "ctaPackages": "לחבילות",
-"heroExplain": "לא ראיתם את \"ביג ליבובסקי\"? וולטר סובצ׳ק הוא החבר מהבאולינג של הדוד (The Dude): גדול, רועש, נאמן, אובססיבי לחוקים, ובשבת הוא לא מגלגל. נף משחק אותו בלייב, כולל האפוד.",
 "plaqueTop": "מגלגל החודש",
 "plaqueName": "נף שטיינמץ בתור וולטר",
 "plaqueStat": "עבירות שנסלחו: 0",
 "heroImgAlt": "נף בלילה עם משקפיים צהובים ואפוד דייגים בצבע חאקי, בדמות של וולטר",
-"dudeArtAlt": "לוח צילום של לונה פארק עם הדוד (The Dude) מצויר בחלוק רחצה, מחזיק ווייט רשן, ועם חור ריק במקום הפנים",
+"dudeArtAlt": "לוח צילום של לונה פארק עם הדוד מצויר בחלוק רחצה, מחזיק ווייט רשן, ועם חור ריק במקום הפנים",
 "yourFace": "הפרצוף שלך כאן",
 "nowCasting": "מלהקים עכשיו",
 "laneHint": "נסו לדרוך על הקו",
@@ -1959,10 +2145,10 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "walterPlayed": "בגילומו של נף שטיינמץ",
 "walterLine": "שומר שבת. קצין חוקים. על וייטנאם לא מדברים בבר מצווה.",
 "statusAvailable": "מקבל בקשות",
-"dudeName": "הדוד (The Dude)",
+"dudeName": "הדוד",
 "dudePlayed": "בגילומו של: עוד לא לוהק",
 "dudeLine": "חייב לזרום. חייב שיהיה לו חלוק.",
-"dudeTip": "מכירים מישהו שיכול להיות הדוד? ספרו לנף.",
+"dudeTip": "מכירים דוד מתאים? ספרו לנף.",
 "statusCasting": "מלהקים עכשיו",
 "donnyName": "דוני",
 "donnyPlayed": "בגילומו של: יפורסם בהמשך",
@@ -1971,7 +2157,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "stampCasting": "בליהוק",
 "stampSoon": "בקרוב",
 "starringLabel": "בכיכובו של",
-"starringDudeJoke": "הדוד (The Dude) לא הצליח להגיע. וולטר אומר שזה בסדר. וולטר רגוע.",
+"starringDudeJoke": "הדוד לא הצליח להגיע. וולטר אומר שזה בסדר. וולטר רגוע.",
 "walterThumbAlt": "נף בתור וולטר, עם משקפיים צהובים ואפוד חאקי",
 "whatEyebrow": "נוהל עבודה",
 "whatTitle": "כמו קוסם או ליצן. רק שהוא בא לאכוף חוקים.",
@@ -2050,7 +2236,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "ticketWaitlist": "בקשה לרשימת המתנה. לא משלמים כלום עד שהדוד מלוהק והתאריך מאושר.",
 "bookThis": "הזמינו את החבילה",
 "joinWaitlist": "להצטרף לרשימת ההמתנה",
-"smallPrint": "המחירים בשקלים, טיוטה. במרכז ההגעה כלולה; {travel}; לשאר הארץ יתווספו דמי נסיעה לפי הצעת מחיר. חבילות רגילות לא בשבת ובחג.",
+"smallPrint": "המחירים בשקלים{draft}. במרכז ההגעה כלולה; {travel}; לשאר הארץ יתווספו דמי נסיעה לפי הצעת מחיר. חבילות רגילות לא בשבת ובחג.",
 "bowlEyebrow": "מסלול 7 · משחק חופשי",
 "bowlTitle": "בואו נגלגל פריים עם וולטר",
 "bowlLead": "חמישה פריימים, ניקוד אמיתי. נועלים כיוון ואז משחררים. משחררים באדום? דרכתם על הקו.",
@@ -2105,7 +2291,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "resName_donny": "דוני",
 "resName_rug": "השטיח",
 "resDesc_walter": "אתם מאמינים שיש חוקים. אתם צודקים. אתם תמיד צודקים. אני טועה?",
-"resDesc_dude": "אתם הדוד (The Dude). אתם זורמים. חלוק הרחצה שלכם נחשב לבוש ערב.",
+"resDesc_dude": "אתם זורמים. חלוק הרחצה שלכם נחשב לבוש ערב.",
 "resDesc_donny": "אתם מחוץ לאלמנט שלכם, וכולם אוהבים אתכם בגלל זה.",
 "resDesc_rug": "אתם באמת מחברים את החדר. מישהו ינסה לגנוב אתכם. וולטר לא ירשה את זה.",
 "resCta_walter": "אתם ונף תסתדרו מצוין. הזמינו אותו.",
@@ -2117,7 +2303,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "copyLink": "להעתיק את התוצאה",
 "shareText": "יצא לי {name}. איזה ליבובסקי אתם?{url}",
 "castEyebrow": "קול קורא",
-"castTitle": "ליהוק: הדוד (The Dude)",
+"castTitle": "ליהוק: הדוד",
 "castLead": "וולטר צריך את הדוד שלו. נף מחפש אותו: חבר, או הדוד הכי טוב בישראל. עד אז, וולטר מגלגל לבד, ורגוע לגמרי עם זה.",
 "castCalm": "\"רגוע יותר ממך.\"",
 "reqTitle": "דרישות",
@@ -2138,8 +2324,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "nYours": "השם שלכם",
 "nWhy": "למה הוא הדוד?",
 "nSubmit": "להכין את ההמלצה",
-"applyIntro": "היי נף, אני רוצה להיות הדוד (The Dude).",
-"nominateIntro": "היי נף, מצאתי לך את הדוד (The Dude).",
+"applyIntro": "היי נף, אני רוצה להיות הדוד.",
+"nominateIntro": "היי נף, מצאתי לך את הדוד.",
 "applyTitle": "מועמדות לתפקיד הדוד",
 "nominateTitle": "המלצה לתפקיד הדוד",
 "errHisName": "מה השם של המועמד?",
@@ -2273,7 +2459,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "foot3": "© נף שטיינמץ",
 "footShabbos": "סגור בשבת. ברור.",
 "navGram": "וולטר-גרם",
-"heroFrom": "החל מ־{price} · תשובה בוואטסאפ תוך כמה שעות",
+"heroFrom": "החל מ־{price} · הבקשות מגיעות לנף בוואטסאפ",
 "occTitle": "מה חוגגים?",
 "occ_wedding": "חתונה",
 "occ_mitzvah": "בר/בת מצווה",
@@ -2281,8 +2467,8 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "occ_friday": "ליל שישי",
 "occ_birthday": "יום הולדת",
 "occ_office": "אירוע חברה",
-"occSet": "ההזמנה מוכנה ל: {occ}.",
-"occSetFriday": "ההזמנה מוכנה לליל שישי, עם ספיישל שומר שבת.",
+"occSet": "הטופס מוכן ל{occ}.",
+"occSetFriday": "הטופס מוכן לליל שישי, עם ספיישל שומר שבת.",
 "occBookLink": "להשלים הזמנה",
 "occTag_wedding": "זה לא וייטנאם. זאת חתונה. יש חוקים.",
 "occTag_mitzvah": "זה לא וייטנאם. זאת בר מצווה. יש חוקים.",
@@ -2292,14 +2478,14 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "occTag_office": "זה לא וייטנאם. זה אירוע חברה. יש חוקים.",
 "evFriday": "ארוחת שישי",
 "addon_hunt": "איפה וולטר?",
-"addon_hunt_desc": "משחק המסיבה: האורחים מחפשים את וולטר לאורך עשרה פריימים, עם תמונה ומילת קוד, וניקוד כמו בבאולינג.",
+"addon_hunt_desc": "גישה מוקדמת. משחק המסיבה: האורחים מחפשים את וולטר לאורך עשרה פריימים, עם תמונה ומילת קוד, וניקוד כמו בבאולינג. נף יאשר זמינות.",
 "noteNoPhonesShabbos": "בשבת הטלפונים בקופסה",
 "ticketCity": "איפה המסיבה?",
 "lblTravel": "נסיעה",
 "travelIncluded": "כלול",
 "travelQuote": "לפי הצעת מחיר",
 "depositLine": "{deposit} שומרים את התאריך. השאר באירוע.",
-"pkgFridaysLeft": "ימי שישי שנשארו ב־{year}: {n}. וולטר אחד.",
+"pkgFridaysLeft": "עוד {n} ימי שישי בלוח של {year}.",
 "rulEyebrow": "לא בטוחים איזו חבילה?",
 "rulTitle": "פסק הדין של וולטר",
 "rulLead": "חמש שאלות. פסק דין מחייב אחד. וולטר מעולם לא טעה. אני טועה?",
@@ -2337,7 +2523,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "gramLead": "כמו ברכה מסלב, רק שזאת מגיעה עם חוקים. ממלאים, והתסריט כותב את עצמו.",
 "gOccLegend": "לכבוד מה?",
 "gOcc_birthday": "יום הולדת",
-"gOcc_mitzvah": "בר/בת מצווה",
+"gOcc_mitzvah": "בר מצווה",
 "gOcc_wedding": "חתונה",
 "gOcc_pep": "זריקת מוטיבציה",
 "gOcc_roast": "רוסט",
@@ -2359,7 +2545,6 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "rule_custom": "חוק משלי…",
 "gNotes": "עוד משהו שוולטר צריך לדעת?",
 "gNotesPh": "שמות, בדיחות פנימיות, על מה לא לדבר",
-"gRush": "דחוף: בדרך כלל תוך 24 שעות (+{price})",
 "gPriceLine": "{price} · בדרך כלל נשלח בוואטסאפ תוך {h} שעות",
 "gDelivery": "בדרך כלל בוואטסאפ תוך {h} שעות",
 "gSubmit": "להכין את ההזמנה",
@@ -2385,37 +2570,37 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "gPh_age": "[גיל]",
 "gPh_rule": "[חוק]",
 "gS_open": "{to}. כאן וולטר.",
-"gS_birthday": "היום יום ההולדת שלך. זאת לא דעה. זה לוח השנה.",
-"gS_birthdayAge": "היום מלאו לך {age}. {age} שנה ואף פעם לא עברת את הקו. כמעט.",
-"gS_mitzvah": "היום עולים לתורה. 3,000 שנה של מסורת יפהפייה, ועכשיו תורך. בלי למהר בהפטרה.",
-"gS_mitzvahAge": "היום מלאו לך {age}. 3,000 שנה של מסורת יפהפייה, ועכשיו תורך. בלי למהר בהפטרה.",
+"gS_birthday": "היום יום ההולדת שלכם. זאת לא דעה. זה לוח השנה.",
+"gS_birthdayAge": "היום מלאו לכם {age}. {years} ואף פעם לא עברתם את הקו. כמעט.",
+"gS_mitzvah": "היום אתה עולה לתורה. 3,000 שנה של מסורת יפהפייה, ועכשיו תורך. אל תמהר בהפטרה.",
+"gS_mitzvahAge": "היום מלאו לך {age}. 3,000 שנה של מסורת יפהפייה, ועכשיו תורך. אל תמהר בהפטרה.",
 "gS_wedding": "היום מתחתנים. נישואים זה לא וייטנאם. יש חוקים. חוק ראשון: בן או בת הזוג צודקים. אני טועה?",
-"gS_pep": "שמעתי מ־{from} שמחכה לך משהו גדול. תקשיבו לי. זה ממש לא מחוץ לאלמנט שלך.",
-"gS_roast": "{from} ביקשו שאגיד כמה מילים. ראיתי את הבאולינג שלך. ראיתי את התספורת שלך. תרשום אפס.",
-"gS_line": "שמעתי מ־{from} שעברת את הקו. עברת את הקו! תרשום אפס. ויודעים מה עשית.",
-"gS_rule": "החוק של וולטר בשבילך: {rule}. זאת לא המלצה.",
+"gS_pep": "שמעתי מ־{from} שמחכה לכם משהו גדול. תקשיבו לי. זה ממש לא מחוץ לאלמנט שלכם.",
+"gS_roast": "{from} ביקשו שאגיד כמה מילים. ראיתי את הבאולינג שלכם. ראיתי את התספורת שלכם. תרשום אפס.",
+"gS_line": "שמעתי מ־{from} שעברתם את הקו. עברתם את הקו! תרשום אפס. ויודעים מה עשיתם.",
+"gS_rule": "החוק של וולטר בשבילכם: {rule}. זאת לא המלצה.",
 "gS_close_birthday": "יום הולדת שמח. יש חוקים. וולטר, סוף.",
-"gS_close_mitzvah": "מזל טוב. שומר שבת. וולטר, סוף.",
-"gS_close_wedding": "מזל טוב לשניכם. רגוע יותר ממך? אף אחד. וולטר, סוף.",
-"gS_close_pep": "יאללה. רגוע יותר ממך. וולטר, סוף.",
+"gS_close_mitzvah": "מזל טוב. נתראה בקידוש. וולטר, סוף.",
+"gS_close_wedding": "מזל טוב לשניכם. רגוע יותר מכם? אף אחד. וולטר, סוף.",
+"gS_close_pep": "יאללה. רגוע יותר מכם. וולטר, סוף.",
 "gS_close_roast": "אני אומר את זה באהבה. בערך. וולטר, סוף.",
 "gS_close_line": "תתנצלו בפני {from}. ואז משחקים באולינג. וולטר, סוף.",
 "huntEyebrow": "תוספת: משחק למסיבה",
 "huntTitle": "איפה וולטר?",
 "huntSub": "משחק המסיבה שבו המסיבה היא הלוח.",
 "hunt1T": "סורקים",
-"hunt1": "האורחים סורקים QR בכניסה. אין מה להתקין.",
+"hunt1": "האורחים יסרקו QR בכניסה. אין מה להתקין.",
 "hunt2T": "מחפשים",
 "hunt2": "וולטר מסתובב בחדר. מוצאים אותו עשר פעמים: עשרה פריימים.",
 "hunt3T": "מוכיחים",
-"hunt3": "כל מציאה דורשת תמונה עם וולטר ואת מילת הקוד שלו לפריים.",
+"hunt3": "בכל איתור מצלמים סלפי עם וולטר ומקבלים ממנו את מילת הקוד של הפריים.",
 "hunt4T": "צוברים",
 "hunt4": "ניקוד כמו בבאולינג, עד 300 מושלם.",
 "hunt5T": "צופים",
-"hunt5": "מסך מסלול על המסך של האולם מציג את הטבלה בזמן אמת.",
+"hunt5": "מסך מסלול על המסך של האולם יציג את הטבלה.",
 "hunt6T": "שומרים",
-"hunt6": "המארחים שומרים את האלבום: כל תמונה של כל אורח עם וולטר.",
-"huntPrice": "מוסיפים לכל חבילה עם הגעה: {price}.",
+"hunt6": "המארחים ישמרו את האלבום: כל תמונה של כל אורח עם וולטר.",
+"huntPrice": "מחיר גישה מוקדמת: {price} עם כל חבילה עם הגעה. נף יאשר זמינות.",
 "huntAdd": "להוסיף לדף הניקוד",
 "huntDemo": "לנסות את הדמו",
 "huntDemoSoon": "קישור לדמו בקרוב.",
@@ -2471,12 +2656,60 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--foul);
 "laneWord": "מסלול",
 "errGuests": "מספר האורחים צריך להיות 1 ומעלה.",
 "fDateOptional": "לאיזה תאריך? (לא חובה)",
-"noneNote": "רק וידאו: בלי תאריך, עיר או כללי שבת. את התסריט כותבים בבונה הוולטר-גרם למעלה.",
+"noneNote": "לוולטר-גרם יש טופס הזמנה משלו, עם תצוגת תסריט חיה.",
 "miniTotal": "סה״כ",
 "miniSheet": "דף הניקוד",
 "minWord": "דקות",
 "hourWord": "שעה",
-"hoursWord": "שעות"
+"hoursWord": "שעות",
+"draftChip": "טיוטה",
+"draftHide": "הבנתי, להסתיר",
+"gRushTitle": "דחוף",
+"gRushSub": "בדרך כלל תוך 24 שעות",
+"lane_ruling": "לא בטוחים איזו חבילה? וולטר יפסוק.",
+"lane_gram": "סרטון אישי מוולטר. מתנה מעולה, איומים קלים.",
+"lane_hunt": "גישה מוקדמת: משחק המסיבה שבו האורחים צדים את וולטר.",
+"lane_bowl": "חמישה פריימים, ניקוד אמיתי. לא לדרוך על הקו.",
+"lane_quiz": "ארבע שאלות. ליבובסקי אחד. בלי ערעורים.",
+"lane_casting": "וולטר צריך את הדוד שלו. אולי זה אתם?",
+"lane_naf": "האיש שבאפוד. גם ספר.",
+"lane_reviews": "מה תיבת המעטפות אמרה.",
+"lane_faq": "שבת, כשרות, תספורות, עברית. יש תשובות.",
+"moreBtn": "להמשך קריאה",
+"lessBtn": "פחות",
+"heroExplain__duo": "לא ראיתם את \"ביג ליבובסקי\"? וולטר סובצ׳ק הוא החבר מהבאולינג של הדוד: גדול, רועש, נאמן, אובססיבי לחוקים, ובשבת הוא לא מגלגל. נף משחק אותו בלייב, כולל האפוד.",
+"heroExplain__solo": "לא ראיתם את \"ביג ליבובסקי\"? וולטר סובצ׳ק הוא החבר מהבאולינג של הדוד (The Dude): גדול, רועש, נאמן, אובססיבי לחוקים, ובשבת הוא לא מגלגל. נף משחק אותו בלייב, כולל האפוד.",
+"draftSuffix": ", טיוטה",
+"earlyBadge": "גישה מוקדמת",
+"huntNote": "נסו את הדמו עכשיו. הגרסה החיה (הטלפון של כל אורח, מסך מסלול חי) בבנייה. הזמינו, ונף יאשר זמינות.",
+"huntStepsLabel": "איך הגרסה החיה תעבוד",
+"rEv_evWedding": "חתונה",
+"rEv_evMitzvah": "בר / בת מצווה",
+"rEv_evClub": "ערב במועדון",
+"rEv_evFriday": "ארוחת שישי",
+"rEv_evBirthday": "יום הולדת",
+"rEv_evOffice": "אירוע חברה",
+"rEv_evDinner": "ארוחת ערב",
+"rW_event_one": "העותר מדווח על אירוע מסוג \"{event}\", בהשתתפות אורח אחד;",
+"errRGuests": "מספר האורחים צריך להיות מספר שלם בין 1 ל־2,000.",
+"rAppliedReplaced": "פסק הדין הוחל. הוא החליף את התוספות שבחרתם קודם: {list}.",
+"gOcc_batmitzvah": "בת מצווה",
+"gS_batmitzvah": "היום את בת מצווה. 3,000 שנה של מסורת יפהפייה, ועכשיו תורך.",
+"gS_batmitzvahAge": "היום מלאו לך {age}, ואת בת מצווה. 3,000 שנה של מסורת יפהפייה, ועכשיו תורך.",
+"gS_close_batmitzvah": "מזל טוב. מעכשיו החוקים שלך. וולטר, סוף.",
+"errAge": "הגיל צריך להיות מספר שלם בין 1 ל־120.",
+"noneLink": "להזמנה כאן ←",
+"nightsMore": "עוד תאריכים",
+"errStuckChag": "השבת הזאת נמשכת ישר לחג. וולטר היה נתקע עד יום שני. דברו עם נף.",
+"bannerPreview": "תצוגה של מצב שבת: ככה העמוד נראה בשבת. וולטר עונה במוצאי שבת.",
+"v_omer": "ספירת העומר: הרבה משפחות לא עורכות חתונות בתקופה הזאת. כדאי לבדוק עם הרב.",
+"v_threeweeks": "בין המצרים: הרבה משפחות נמנעות עכשיו מחתונות וממוזיקה חיה. כדאי לבדוק עם הרב.",
+"v_shoah": "יום השואה. יום זיכרון; רוב המשפחות לא עורכות שמחות.",
+"v_zikaron": "יום הזיכרון לחללי מערכות ישראל. בדרך כלל לא עורכים חתונות ומסיבות.",
+"v_atzmaut": "יום העצמאות. חגיגי ועמוס: כדאי להזמין מוקדם.",
+"v_gedaliah": "צום גדליה, צום קל. יש משפחות שלא עורכות שמחות.",
+"v_tevet": "עשרה בטבת, צום קל. יש משפחות שלא עורכות שמחות.",
+"v_esther": "תענית אסתר, צום קל. יש משפחות שלא עורכות שמחות."
 }
 }
 </script>
@@ -2745,13 +2978,13 @@ const VARIANT = 'solo'; // 'duo' | 'solo'
 // DRAFT — Zev/Naf to set: every price (₪), deposit, travel charge, the WhatsApp number, links and photos.
 const CONFIG = {
   whatsapp: '',   // international digits only, e.g. '9725XXXXXXXX'. Empty = forms are not connected.
-  shareUrl: 'https://zev330-lab.github.io/big-lebowski-live/solo/',   // public link the quiz result shares; build.sh sets it per variant. Empty = no link in the share text.
-  appUrl: 'https://zev330-lab.github.io/big-lebowski-live/wheres-walter/', // Where's Walter? demo (both variants). Empty = button hidden, "Demo link coming" shown.
+  shareUrl: 'https://raw.githack.com/zev330-lab/big-lebowski-live/main/solo/index.html',   // public link the quiz result shares; build.sh sets it per variant. Empty = no link in the share text.
+  appUrl: 'https://raw.githack.com/zev330-lab/big-lebowski-live/main/wheres-walter/index.html', // Where's Walter? demo (both variants). Empty = button hidden, "Demo link coming" shown.
   preview: true,  // shows the "Preview for Naf" ribbon. Set false for launch.
   photos: { hero: '../assets/walter-night.jpg', smile: '../assets/naf-smile.jpg', cosmos: '../assets/naf-cosmos.jpg' },
   characters: [
     { id: 'walter', name: { en: 'Walter', he: 'וולטר' }, performer: 'Naf Steinmetz', available: true },
-    { id: 'dude', name: { en: 'The Dude', he: 'הדוד (The Dude)' }, performer: null, available: false, status: 'statusCasting' },
+    { id: 'dude', name: { en: 'The Dude', he: 'הדוד' }, performer: null, available: false, status: 'statusCasting' },
     { id: 'donny', name: { en: 'Donny', he: 'דוני' }, performer: null, available: false, status: 'statusSoon' }
   ],
   packages: [
@@ -2846,6 +3079,28 @@ const CONFIG = {
   const fmtLong = (s) => fmtDay(s, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
   const fmtShort = (s) => fmtDay(s, { weekday: 'short', day: 'numeric', month: 'short' });
   const isYomKippur = (s) => { const h = JT.hebrewDate(s); return h.key === 'tishrei' && h.day === 10; };
+  // Shomer Shabbos Special: Walter leaves at Havdalah, so the Sunday after must not be yom tov (e.g. a two-day Rosh Hashanah).
+  const stuckChag = (fri) => JT.verdict(addDays(fri, 2)).code === 'yomtov';
+  const shabbosFridayOk = (fri) => JT.verdict(fri).severity !== 'blocked' && !isYomKippur(addDays(fri, 1)) && !stuckChag(fri);
+  // Israeli memorial days and minor fasts, with the official weekday shifts. Warnings only; Naf decides what blocks.
+  function extraDay(s) {
+    const h = JT.hebrewDate(s), d = h.day, k = h.key, w = dow(s);
+    const wOf = (day) => (((w - (d - day)) % 7) + 7) % 7; // weekday of another day in the same Hebrew month
+    if (k === 'nisan') { const w27 = wOf(27); if (d === (w27 === 5 ? 26 : w27 === 0 ? 28 : 27)) return 'shoah'; }
+    if (k === 'iyar') { const w5 = wOf(5), atz = w5 === 5 ? 4 : w5 === 6 ? 3 : w5 === 1 ? 6 : 5; if (d === atz) return 'atzmaut'; if (d === atz - 1) return 'zikaron'; }
+    if (k === 'tishrei' && d === (wOf(3) === 6 ? 4 : 3)) return 'gedaliah';
+    if (k === 'tevet' && d === 10) return 'tevet';
+    if ((k === 'adar' || k === 'adar2') && d === (wOf(13) === 6 ? 11 : 13)) return 'esther';
+    return null;
+  }
+  function verdictFor(s) {
+    const v = Object.assign({}, JT.verdict(s));
+    if (v.severity === 'blocked' || v.code === 'erevchag') return v;
+    const x = extraDay(s);
+    if (x) return Object.assign(v, { code: x, severity: x === 'atzmaut' ? 'ok' : 'warn', en: I18N.en['v_' + x], he: I18N.he['v_' + x] });
+    if (v.code === 'omer' || v.code === 'threeweeks') Object.assign(v, { en: I18N.en['v_' + v.code], he: I18N.he['v_' + v.code] });
+    return v;
+  }
 
   /* ---------- Sound: synthesized, gesture-gated, silent under automation ---------- */
   const Sound = (() => {
@@ -2927,8 +3182,9 @@ const CONFIG = {
   rerender.push(fillCities);
 
   /* ---------- Shabbos mode ---------- */
-  const shabbos = { manual: false, auto: false };
-  const isShabbos = () => shabbos.manual || shabbos.auto;
+  const shabbos = { manual: false, auto: false, dismissed: false };
+  const realShabbos = () => shabbos.auto && !shabbos.dismissed; // Tel Aviv candle-lighting to Havdalah, unless turned off
+  const isShabbos = () => shabbos.manual || realShabbos();
   function inShabbosWindow() {
     // Israel time, real Tel Aviv times: Friday from candle-lighting until Saturday Havdalah.
     try {
@@ -2943,14 +3199,20 @@ const CONFIG = {
     } catch (e) { return false; }
   }
   function renderShabbos() {
-    document.documentElement.classList.toggle('shabbos', shabbos.manual);
-    ['#btn-shabbos', '#dr-shabbos'].forEach((s) => $(s).setAttribute('aria-pressed', String(shabbos.manual)));
-    $('#shabbos-banner').hidden = !isShabbos();
-    $$('.outbox').forEach((box) => { const s = $('[data-ob="shabbos"]', box); if (s) s.hidden = !isShabbos(); });
+    const on = isShabbos();
+    document.documentElement.classList.toggle('shabbos', on);
+    ['#btn-shabbos', '#dr-shabbos'].forEach((s) => $(s).setAttribute('aria-pressed', String(on)));
+    $('#shabbos-banner').hidden = !on;
+    $('#banner-text').textContent = t(realShabbos() ? 'banner' : 'bannerPreview');
+    $$('.outbox').forEach((box) => { const s = $('[data-ob="shabbos"]', box); if (s) s.hidden = !realShabbos(); });
   }
-  ['#btn-shabbos', '#dr-shabbos'].forEach((s) => $(s).addEventListener('click', () => { shabbos.manual = !shabbos.manual; renderShabbos(); }));
+  ['#btn-shabbos', '#dr-shabbos'].forEach((s) => $(s).addEventListener('click', () => {
+    if (isShabbos()) { shabbos.manual = false; if (shabbos.auto) shabbos.dismissed = true; } else { shabbos.manual = true; shabbos.dismissed = false; }
+    renderShabbos();
+  }));
   shabbos.auto = inShabbosWindow();
-  setInterval(() => { const a = inShabbosWindow(); if (a !== shabbos.auto) { shabbos.auto = a; renderShabbos(); } }, 60000);
+  setInterval(() => { const a = inShabbosWindow(); if (a !== shabbos.auto) { shabbos.auto = a; shabbos.dismissed = false; renderShabbos(); } }, 60000);
+  rerender.push(renderShabbos);
 
   /* ---------- Mute + language ---------- */
   const muteBtns = [$('#btn-mute'), $('#dr-mute')];
@@ -2976,9 +3238,13 @@ const CONFIG = {
 
   /* ---------- Preview ribbon, live nav height, lane-assignment drawer ---------- */
   (() => {
-    const rib = $('#preview');
-    rib.hidden = !CONFIG.preview || store.get('bl-preview-dismissed') === '1';
-    $('#preview-close').addEventListener('click', () => { rib.hidden = true; store.set('bl-preview-dismissed', '1'); });
+    const rib = $('#preview'), chip = $('#draft-chip'), pop = $('#draft-pop');
+    const showDraft = !!CONFIG.preview && store.get('bl-preview-dismissed') !== '1';
+    rib.hidden = !showDraft; chip.hidden = !showDraft; // CSS shows the ribbon on wide screens and the chip on phones
+    const dismiss = () => { rib.hidden = true; chip.hidden = true; pop.hidden = true; chip.setAttribute('aria-expanded', 'false'); store.set('bl-preview-dismissed', '1'); };
+    $('#preview-close').addEventListener('click', dismiss);
+    $('#draft-hide').addEventListener('click', () => { dismiss(); $('#btn-lang').focus(); });
+    chip.addEventListener('click', () => { pop.hidden = !pop.hidden; chip.setAttribute('aria-expanded', String(!pop.hidden)); });
     const nav = $('#nav');
     const setNav = () => document.documentElement.style.setProperty('--nav-live', nav.offsetHeight + 'px');
     setNav();
@@ -2992,6 +3258,7 @@ const CONFIG = {
       btn.setAttribute('aria-expanded', 'true');
       behind().forEach((el) => el.setAttribute('inert', ''));
       document.documentElement.style.overflow = 'hidden';
+      if (window.mbarApply) window.mbarApply();
       $('.lanes a', panel).focus();
     }
     function close(restoreFocus) {
@@ -3000,6 +3267,7 @@ const CONFIG = {
       btn.setAttribute('aria-expanded', 'false');
       behind().forEach((el) => el.removeAttribute('inert'));
       document.documentElement.style.overflow = '';
+      if (window.mbarApply) window.mbarApply();
       if (restoreFocus) btn.focus();
     }
     btn.addEventListener('click', () => (drawer.hidden ? open() : close(true)));
@@ -3015,6 +3283,52 @@ const CONFIG = {
     $$('a[href^="#"]', panel).forEach((a) => a.addEventListener('click', () => close(false)));
     window.addEventListener('resize', () => { if (window.innerWidth >= 1100) close(false); });
   })();
+
+  /* ---------- Lane cards: on phones the secondary sections fold into one-line cards (desktop unchanged) ---------- */
+  const LANE_TITLES = { ruling: 'rulTitle', gram: 'navGram', hunt: 'huntTitle', bowl: 'bowlTitle', quiz: 'quizTitle', casting: 'castTitle', naf: 'nafTitle', reviews: 'revTitle', faq: 'faqTitle' };
+  function setLane(sec, open) {
+    sec.classList.toggle('is-open', open);
+    $('.lane-toggle', sec).setAttribute('aria-expanded', String(open));
+  }
+  function openLaneFor(el) {
+    const sec = el && el.closest ? el.closest('.lane-sec') : null;
+    if (sec && !sec.classList.contains('is-open')) setLane(sec, true);
+    return sec;
+  }
+  $$('.lane-sec').forEach((sec) => {
+    const id = sec.dataset.lane;
+    const body = document.createElement('div');
+    body.className = 'lane-body'; body.id = id + '-body';
+    body.setAttribute('role', 'region'); body.setAttribute('aria-labelledby', id + '-lane');
+    while (sec.firstChild) body.appendChild(sec.firstChild);
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'lane-toggle'; btn.id = id + '-lane';
+    btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', body.id);
+    const title = span('lane-t', ''); title.dataset.i18n = LANE_TITLES[id];
+    const teaser = span('lane-s', ''); teaser.dataset.i18n = 'lane_' + id;
+    const chev = span('lane-chev', ''); chev.setAttribute('aria-hidden', 'true');
+    btn.append(title, teaser, chev);
+    btn.addEventListener('click', () => setLane(sec, !sec.classList.contains('is-open')));
+    sec.append(btn, body);
+    const h2 = document.getElementById(sec.getAttribute('aria-labelledby'));
+    if (h2) { // the card already shows the title on phones
+      h2.classList.add('lane-dup');
+      if (h2.previousElementSibling && h2.previousElementSibling.classList.contains('eyebrow')) h2.previousElementSibling.classList.add('lane-dup');
+    }
+  });
+  // Any in-page link (drawer, quiz CTA, "Know a Dude?", occasion and section hashes) opens its card before the jump.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    const target = a && a.getAttribute('href').length > 1 ? document.getElementById(a.getAttribute('href').slice(1)) : null;
+    if (target) openLaneFor(target);
+  }, true);
+  function openHashTarget(scroll) {
+    const id = location.hash.slice(1), target = id ? document.getElementById(id) : null;
+    if (!target || !openLaneFor(target) || !scroll) return;
+    target.scrollIntoView({ block: 'start' });
+    if (document.fonts && document.fonts.status === 'loading') document.fonts.ready.then(() => requestAnimationFrame(() => target.scrollIntoView({ block: 'start' })));
+  }
+  window.addEventListener('hashchange', () => openHashTarget(true));
 
   /* ---------- Hero foul line ---------- */
   (() => {
@@ -3082,6 +3396,7 @@ const CONFIG = {
   /* ---------- Packages configurator ---------- */
   const cfg = { pkg: CONFIG.defaultPackage, addons: new Set(), hours: 1 };
   const state = { city: '' }; // shared by the score sheet and the booking form
+  const cityWatchers = []; // other totals that depend on the city (the ruling)
   function travelText() {
     const groups = {};
     Object.keys(CONFIG.travel).forEach((id) => { const n = CONFIG.travel[id]; (groups[n] = groups[n] || []).push(cityLabel(id)); });
@@ -3111,7 +3426,9 @@ const CONFIG = {
     });
     $('#cut-hours-wrap').hidden = !cfg.addons.has('cut');
     $('#addon-cut-hours').value = String(cfg.hours);
-    $('#pk-fridays').textContent = t('pkgFridaysLeft', { year: todayISO.slice(0, 4), n: JT.fridaysLeftThisYear(todayISO) });
+    const left = fridaysLeft();
+    $('#pk-fridays').hidden = !left;
+    $('#pk-fridays').textContent = t('pkgFridaysLeft', { year: todayISO.slice(0, 4), n: left });
     renderTicket();
   }
   function renderTicket() {
@@ -3142,19 +3459,22 @@ const CONFIG = {
     dep.hidden = !hasDeposit(cfg.pkg);
     dep.textContent = t('depositLine', { deposit: money(CONFIG.deposit) });
     $('#ticket-wait').hidden = !p.waitlist;
-    $('#btn-book-this').textContent = p.waitlist ? t('joinWaitlist') : t('bookThis');
-    $('#ticket-print').textContent = t('smallPrint', { travel: travelText() });
+    $('#btn-book-this').textContent = t(p.live === false ? 'noneLink' : p.waitlist ? 'joinWaitlist' : 'bookThis');
+    $('#mini-book').textContent = t(p.live === false ? 'noneLink' : p.waitlist ? 'joinWaitlist' : 'bookThis');
+    cityWatchers.forEach((f) => f());
+    $('#ticket-print').textContent = t('smallPrint', { travel: travelText(), draft: CONFIG.preview ? t('draftSuffix') : '' });
   }
   function setPackage(id) {
     cfg.pkg = id; // the Walter-gram is the "No live visit" package itself, so nothing is auto-added or left behind
     renderBoard();
   }
-  $$('input[name="pkg"]').forEach((r) => r.addEventListener('change', () => setPackage(r.value)));
+  $$('input[name="pkg"]').forEach((r) => r.addEventListener('change', () => { setPackage(r.value); cfgToForm(); }));
   $$('[data-addon-row] input').forEach((c) => c.addEventListener('change', () => {
     if (c.checked) cfg.addons.add(c.value); else cfg.addons.delete(c.value);
     renderBoard();
+    cfgToForm();
   }));
-  $('#addon-cut-hours').addEventListener('change', (e) => { cfg.hours = clampHours(e.target.value); renderBoard(); });
+  $('#addon-cut-hours').addEventListener('change', (e) => { cfg.hours = clampHours(e.target.value); renderBoard(); cfgToForm(); });
   function setCity(v) {
     state.city = v;
     ['#cfg-city', '#f-city'].forEach((s) => { const el = $(s); if (el.value !== v) el.value = v; });
@@ -3200,7 +3520,23 @@ const CONFIG = {
     if (v === 'duo') fPkg.value = 'duo';
     else if (fPkg.value === 'duo') fPkg.value = CONFIG.defaultPackage;
     syncForm();
+    formToCfg();
   }
+  function cfgToForm() {
+    fPkg.value = cfg.pkg;
+    ADDONS.forEach((id) => { const i = $('#f-addon-' + id); if (i) i.checked = cfg.addons.has(id); });
+    $('#f-cut-hours').value = String(cfg.hours);
+    syncForm();
+    leaveFriday();
+  }
+  function formToCfg() {
+    cfg.pkg = fPkg.value;
+    cfg.addons = new Set(formAddons());
+    cfg.hours = clampHours($('#f-cut-hours').value);
+    renderBoard();
+    leaveFriday();
+  }
+  function leaveFriday() { if (occasion === 'friday' && cfg.pkg !== 'shabbos') { occasion = ''; renderHero(); } }
   function fillPkgSelect() {
     const v = fPkg.value || CONFIG.defaultPackage;
     fPkg.textContent = '';
@@ -3250,29 +3586,36 @@ const CONFIG = {
   function nightRows(mode) {
     const city = timesCity();
     if (mode === 'fri') {
-      return JT.upcomingFridays(9, city, todayISO).filter((f) => !isYomKippur(addDays(f.date, 1))).slice(0, 8).map((f) => ({
+      return JT.upcomingFridays(12, city, todayISO).filter((f) => shabbosFridayOk(f.date)).slice(0, 8).map((f) => ({
         date: f.date, heb: f.hebrew,
         times: [t('nightCandles', { t: f.candleLighting }), t('nightArrive', { t: fromMin(toMin(f.candleLighting) - CONFIG.arriveBeforeCandlesMins) }), t('nightLeave', { t: f.havdalahSaturday })],
-        warn: f.verdict.severity === 'warn' ? f.verdict[lang] : ''
+        warn: verdictFor(f.date).severity === 'warn' ? verdictFor(f.date)[lang] : ''
       }));
     }
     const out = [];
     let d = addDays(todayISO, (6 - dow(todayISO) + 7) % 7);
     while (out.length < 8) {
       // Saturday night is already Sunday on the Hebrew calendar, so Sunday's verdict decides the night.
-      const night = JT.verdict(addDays(d, 1));
+      const night = verdictFor(addDays(d, 1));
       if (night.severity !== 'blocked') {
         const hv = JT.zmanim(d, city).havdalah;
-        out.push({ date: d, heb: JT.hebrewDate(d), times: [t('nightRoll', { h: hv, t: fromMin(toMin(hv) + 30) })], warn: night.code === 'omer' || night.code === 'threeweeks' ? night[lang] : '' });
+        out.push({ date: d, heb: JT.hebrewDate(d), times: [t('nightRoll', { h: hv, t: fromMin(toMin(hv) + 30) })], warn: night.severity === 'warn' && night.code !== 'erevchag' ? night[lang] : '' });
       }
       d = addDays(d, 7);
     }
     return out;
   }
+  let nightsOpen = false;
+  function fridaysLeft() {
+    let count = 0;
+    for (let d = addDays(todayISO, (5 - dow(todayISO) + 7) % 7); d.slice(0, 4) === todayISO.slice(0, 4); d = addDays(d, 7)) if (shabbosFridayOk(d)) count++;
+    return count;
+  }
   const syncNights = () => $$('#nights .night').forEach((n) => n.classList.toggle('is-on', $('input', n).checked));
   function renderDateUI() {
     const mode = nightMode(), live = pkgById(fPkg.value).live !== false;
-    $$('#book-form [data-live]').forEach((el) => { el.hidden = !live; });
+    $$('#book-form [data-live], #book-form [data-order]').forEach((el) => { el.hidden = !live; });
+    if (!live) $('#out-book').hidden = true;
     $('#none-note').hidden = live;
     $('#f-date-label').textContent = t(live ? 'fDate' : 'fDateOptional');
     $('#hint-date').hidden = !live;
@@ -3283,14 +3626,16 @@ const CONFIG = {
     if (!mode) { renderChips(); return; }
     $('#night-legend').textContent = t(mode === 'fri' ? 'fNightFriday' : 'fNightSaturday');
     const left = $('#fridays-left');
-    left.hidden = mode !== 'fri';
-    left.textContent = t('pkgFridaysLeft', { year: todayISO.slice(0, 4), n: JT.fridaysLeftThisYear(todayISO) });
+    const nLeft = fridaysLeft();
+    left.hidden = mode !== 'fri' || !nLeft;
+    left.textContent = t('pkgFridaysLeft', { year: todayISO.slice(0, 4), n: nLeft });
     $('#night-city').textContent = t('nightCityNote', { city: cityLabel(timesCity()) });
     const rows = nightRows(mode);
     if (fDate.value && !rows.some((r) => r.date === fDate.value)) fDate.value = '';
-    const list = $('#nights');
+    const list = $('#nights'), pickedLate = rows.findIndex((r) => r.date === fDate.value) >= 4;
+    if (pickedLate) nightsOpen = true;
     list.textContent = '';
-    rows.forEach((r) => {
+    rows.forEach((r, i) => {
       const label = document.createElement('label');
       label.className = 'night'; label.htmlFor = 'night-' + r.date;
       const input = document.createElement('input');
@@ -3298,8 +3643,10 @@ const CONFIG = {
       input.addEventListener('change', () => { fDate.value = r.date; syncNights(); vDate(); });
       label.append(input, span('night-date', fmtShort(r.date)), span('night-heb', r.heb[lang]), span('night-times', r.times.join(' · ')));
       if (r.warn) label.appendChild(span('night-warn', r.warn));
+      label.hidden = i >= 4 && !nightsOpen;
       list.appendChild(label);
     });
+    $('#nights-more').hidden = nightsOpen || rows.length <= 4;
     syncNights();
   }
   function renderChips() {
@@ -3309,7 +3656,7 @@ const CONFIG = {
     if (!v) return;
     box.append(span('dchip', fmtLong(v)), span('dchip', JT.hebrewDate(v)[lang]));
     if (p.live === false) return;
-    const ver = JT.verdict(v);
+    const ver = verdictFor(v);
     const stamp = span('verdict is-' + ver.severity, '');
     if (ver.severity === 'blocked') { const b = document.createElement('b'); b.textContent = t('stampZero'); stamp.appendChild(b); }
     stamp.appendChild(document.createTextNode(ver[lang]));
@@ -3320,8 +3667,9 @@ const CONFIG = {
     }
   }
 
-  fPkg.addEventListener('change', syncForm);
-  $$('[data-faddon] input').forEach((c) => c.addEventListener('change', syncForm));
+  fPkg.addEventListener('change', () => { syncForm(); formToCfg(); });
+  $$('[data-faddon] input').forEach((c) => c.addEventListener('change', () => { syncForm(); formToCfg(); }));
+  $('#f-cut-hours').addEventListener('change', formToCfg);
   $$('input[name="event"]').forEach((r) => r.addEventListener('change', () => { syncCards(); if (bookTouched) vEvent(); }));
   $$('input[name="f-io"], input[name="f-kids"], input[name="f-sound"]').forEach((r) => r.addEventListener('change', syncCards));
   fDate.addEventListener('change', () => { renderChips(); vDate(); });
@@ -3356,9 +3704,10 @@ const CONFIG = {
       if (dow(v) !== 5) err = t('errShabbosFriday');
       else if (JT.verdict(v).severity === 'blocked') err = t('errBlocked');
       else if (isYomKippur(addDays(v, 1))) err = t('errKolNidre');
+      else if (stuckChag(v)) err = t('errStuckChag');
     } else if (mode === 'sat') {
       // Shabbos itself is fine: we roll after Havdalah. Sunday's verdict covers the night (yom tov, Tisha B'Av).
-      const night = JT.verdict(addDays(v, 1));
+      const night = verdictFor(addDays(v, 1));
       if (dow(v) !== 6) err = t('errMotzeiSaturday');
       else if (night.severity === 'blocked') err = t('errMotzeiBlocked', { why: night[lang] });
       else {
@@ -3366,7 +3715,7 @@ const CONFIG = {
         if (fTime.value && toMin(fTime.value) < toMin(earliest)) { err = t('errMotzeiEarly', { havdalah: hv, earliest }); target = fTime; }
       }
     } else {
-      const ver = JT.verdict(v);
+      const ver = verdictFor(v);
       if (ver.severity === 'blocked') err = t(ver.code === 'shabbat' ? 'hintMotzei' : 'errBlocked');
       else if (ver.friday || ver.code === 'erevchag') {
         const f = fridayLimits(v, p);
@@ -3386,7 +3735,7 @@ const CONFIG = {
   const vName = () => setErr('name', fName.value.trim() ? '' : t('errName'), fName);
   // Israeli mobile 05X-XXXXXXX, +972 (mobile or landline), or any other +country number with 8-15 digits
   function phoneOk(v) {
-    const s = v.replace(/[\s().-]/g, '');
+    const s = v.replace(/[\s().-]/g, '').replace(/^00/, '+').replace(/^972/, '+972');
     if (/^05\d{8}$/.test(s)) return true;
     if (/^\+972/.test(s)) return /^\+972[1-9]\d{7,8}$/.test(s);
     return /^\+[1-9]\d{7,14}$/.test(s);
@@ -3448,7 +3797,8 @@ const CONFIG = {
     if (num) wa.href = 'https://wa.me/' + num + '?text=' + encodeURIComponent(text);
     status.textContent = t(num ? 'obReadyWa' : 'obReady');
     $('[data-ob="wa-note"]', box).hidden = !num;
-    $('[data-ob="shabbos"]', box).hidden = !isShabbos();
+    $('[data-ob="shabbos"]', box).hidden = !realShabbos();
+    $('[data-ob="not-sent"]', box).hidden = !!num; // with WhatsApp set, the WhatsApp note explains it instead
     $('[data-ob="copy-status"]', box).textContent = '';
   }
   function showOutbox(box, build, title) {
@@ -3471,6 +3821,7 @@ const CONFIG = {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (pkgById(fPkg.value).live === false) { $('#none-link').focus(); return; } // ordered in the Walter-gram builder
     bookTouched = true;
     const results = bookChecks();
     const ok = results.every(Boolean);
@@ -3498,7 +3849,15 @@ const CONFIG = {
     if (bookTouched) { bookChecks(); if (!$('#err-summary').hidden) $('#err-summary').textContent = t('errSummary'); }
   });
 
+  function goToGram() {
+    const g = $('#gram');
+    openLaneFor(g);
+    g.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    try { $('#g-to').focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+  }
+  $('#none-link').addEventListener('click', (e) => { e.preventDefault(); goToGram(); });
   $('#btn-book-this').addEventListener('click', () => {
+    if (cfg.pkg === 'none') { goToGram(); return; }
     fPkg.value = cfg.pkg;
     ADDONS.forEach((id) => { const i = $('#f-addon-' + id); if (i) i.checked = cfg.addons.has(id); });
     $('#f-cut-hours').value = String(cfg.hours);
@@ -3508,6 +3867,15 @@ const CONFIG = {
     const target = !$('input[name="event"]:checked') ? $('#ev-wedding') : nightMode() ? $('#nights input') : fDate;
     if (target) try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); }
   });
+
+  $('#mini-book').addEventListener('click', () => $('#btn-book-this').click());
+  if ('IntersectionObserver' in window) new IntersectionObserver((en) => $('#mini-total').classList.toggle('is-ticket', en.some((x) => x.isIntersecting)), { threshold: 0.25 }).observe($('#ticket'));
+  $('#nights-more').addEventListener('click', () => { nightsOpen = true; renderDateUI(); const extra = $$('#nights .night')[4]; if (extra) $('input', extra).focus(); });
+  // Phones clamp the long Shabbos description; the button inside the card opens it (it does not pick the card).
+  const moreBtn = $('#shabbos-more');
+  const renderMore = () => { const open = moreBtn.closest('.pk').classList.contains('is-more'); moreBtn.textContent = t(open ? 'lessBtn' : 'moreBtn'); moreBtn.setAttribute('aria-expanded', String(open)); };
+  moreBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); moreBtn.closest('.pk').classList.toggle('is-more'); renderMore(); });
+  rerender.push(renderMore);
 
   /* ---------- Casting forms (duo) ---------- */
   if (VARIANT === 'duo') {
@@ -3560,9 +3928,9 @@ const CONFIG = {
     occasion = id;
     const ev = $('input[name="event"][value="' + OCC[id] + '"]');
     if (ev) ev.checked = true;
-    if (id === 'friday') { setPackage('shabbos'); fPkg.value = 'shabbos'; }
-    else if (wasFriday && cfg.pkg === 'shabbos') { setPackage(CONFIG.defaultPackage); fPkg.value = CONFIG.defaultPackage; }
-    syncForm();
+    if (id === 'friday') setPackage('shabbos');
+    else if (wasFriday && cfg.pkg === 'shabbos') setPackage(CONFIG.defaultPackage);
+    cfgToForm();
     renderHero();
     if (!fromHash) { try { history.replaceState(null, '', '#' + id); } catch (e) { /* sandboxed frame */ } }
   }
@@ -3593,17 +3961,21 @@ const CONFIG = {
       EVENTS.forEach((ev) => sel.appendChild(new Option(t(ev), ev)));
       sel.value = keep;
       const ev = sel.value;
-      const guests = Math.max(1, Math.round(Number($('#r-guests').value)) || 1);
       const chaos = Number($('#r-chaos').value) || 5;
       const buffet = $('#r-buffet-yes').checked, hora = $('#r-hora-yes').checked;
       $('#r-chaos-out').textContent = chaos + '/10';
+      const raw = $('#r-guests').value.trim(), guests = Number(raw);
+      const okGuests = raw !== '' && Number.isInteger(guests) && guests >= 1 && guests <= 2000; // validate, never coerce
+      setErr('r-guests', okGuests ? '' : t('errRGuests'), $('#r-guests'));
+      $('#r-apply').disabled = !okGuests;
+      if (!okGuests) return;
       ruling = decide(ev, guests, chaos, buffet, hora);
       ruling.ev = ev;
       const no = '0' + (100 + ((guests * 31 + chaos * 97 + EVENTS.indexOf(ev) * 13 + (buffet ? 7 : 0) + (hora ? 3 : 0)) % 900));
       $('#r-no').textContent = t('rDocNo', { n: no });
       $('#r-date').textContent = fmtLong(todayISO) + ' · ' + JT.hebrewDate(todayISO)[lang];
-      const evName = lang === 'en' ? t(ev).toLowerCase() : t(ev);
-      const clauses = [t('rW_event', { event: evName, guests })];
+      const evName = t('rEv_' + ev);
+      const clauses = [guests === 1 ? t('rW_event_one', { event: evName }) : t('rW_event', { event: evName, guests })];
       if (ev === 'evFriday') clauses.push(t('rW_friday'));
       clauses.push(t(chaos <= 3 ? 'rW_chaosLow' : chaos <= 7 ? 'rW_chaosMid' : 'rW_chaosHigh', { chaos }));
       clauses.push(t(buffet ? 'rW_buffetYes' : 'rW_buffetNo'));
@@ -3624,18 +3996,19 @@ const CONFIG = {
     $('#ruling-form').addEventListener('change', () => { syncCards(); render(); });
     $('#ruling-form').addEventListener('submit', (e) => e.preventDefault());
     $('#r-apply').addEventListener('click', () => {
+      const dropped = [...cfg.addons].filter((a) => ruling.adds.indexOf(a) < 0).map((a) => t('addon_' + a));
       cfg.addons = new Set(ruling.adds);
       cfg.hours = 1;
       setPackage(ruling.pkg);
       const ev = $('input[name="event"][value="' + ruling.ev + '"]');
       if (ev) ev.checked = true;
-      fPkg.value = ruling.pkg;
-      syncForm();
-      $('#r-status').textContent = t('rApplied');
+      cfgToForm();
+      $('#r-status').textContent = dropped.length ? t('rAppliedReplaced', { list: listFmt(dropped) }) : t('rApplied');
       $('#packages').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       try { $('#ticket').focus({ preventScroll: true }); } catch (e) { /* ignore */ }
     });
     rerender.push(render);
+    cityWatchers.push(render); // the ruling total follows the city picked in the score sheet or the form
   })();
 
   /* ---------- Walter-gram builder ---------- */
@@ -3651,13 +4024,17 @@ const CONFIG = {
       const r = $('#g-rule').value;
       return r === 'custom' ? val('g-rule-custom') : gs('rule_' + r, L);
     }
+    const AGE_OCC = ['birthday', 'mitzvah', 'batmitzvah'];
+    const ageVal = () => { const a = val('g-age'), num = Number(a); return a !== '' && Number.isInteger(num) && num >= 1 && num <= 120 ? num : null; };
+    // Hebrew: שנה אחת, שנתיים, 3-10 שנים, 11+ שנה
+    const yearsText = (num, L) => (L === 'he' ? (num === 1 ? 'שנה אחת' : num === 2 ? 'שנתיים' : num + (num <= 10 ? ' שנים' : ' שנה')) : num + (num === 1 ? ' year' : ' years'));
     function script(L) {
-      const o = occ(), age = val('g-age');
-      const lines = [gs('gS_open', L), gs('gS_' + o + ((o === 'birthday' || o === 'mitzvah') && age ? 'Age' : ''), L)];
+      const o = occ(), age = AGE_OCC.indexOf(o) >= 0 ? ageVal() : null;
+      const lines = [gs('gS_open', L), gs('gS_' + o + (age ? 'Age' : ''), L)];
       const rule = ruleText(L);
       if (rule) lines.push(gs('gS_rule', L));
       lines.push(gs('gS_close_' + o, L));
-      return { L, lines, vars: { to: val('g-to'), from: val('g-from'), age, rule } };
+      return { L, lines, vars: { to: val('g-to'), from: val('g-from'), age: age ? String(age) : '', years: age ? yearsText(age, L) : '', rule } };
     }
     const fill = (s, vars, L) => s.replace(/\{(\w+)\}/g, (m, k) => vars[k] || gs('gPh_' + k, L));
     function renderScript() {
@@ -3681,10 +4058,11 @@ const CONFIG = {
       $('#g-rule').textContent = '';
       RULES.concat('custom').forEach((r) => $('#g-rule').appendChild(new Option(t('rule_' + r), r)));
       $('#g-rule').value = keep;
-      $('#g-age-wrap').hidden = !(o === 'birthday' || o === 'mitzvah');
+      $('#g-age-wrap').hidden = AGE_OCC.indexOf(o) < 0;
+      setErr('g-age', $('#g-age-wrap').hidden || val('g-age') === '' || ageVal() ? '' : t('errAge'), $('#g-age'));
       $('#g-rule-custom-wrap').hidden = keep !== 'custom';
       $('#g-count').textContent = $('#g-notes').value.length + '/250';
-      $('#g-rush-label').textContent = t('gRush', { price: money(CONFIG.gramRush) });
+      $('#g-rush-price').textContent = '+' + money(CONFIG.gramRush);
       $('#g-price').textContent = t('gPriceLine', { price: money(CONFIG.addons.gram + (rush ? CONFIG.gramRush : 0)), h: rush ? 24 : 48 });
       syncCards();
       renderScript();
@@ -3698,7 +4076,7 @@ const CONFIG = {
       add('lblOccasion', t('gOcc_' + occ()));
       add('lblFor', val('g-to'));
       add('lblFrom', val('g-from'));
-      if (!$('#g-age-wrap').hidden) add('lblAge', val('g-age'));
+      if (!$('#g-age-wrap').hidden && ageVal()) add('lblAge', String(ageVal()));
       add('lblLang', t(vlang() === 'he' ? 'gLangHe' : 'gLangEn'));
       add('lblRule', ruleText(vlang()));
       add('lblInstr', val('g-notes'));
@@ -3713,6 +4091,7 @@ const CONFIG = {
       setErr('g-to', val('g-to') ? '' : t('errTo'), $('#g-to')),
       setErr('g-from', val('g-from') ? '' : t('errFrom'), $('#g-from')),
       setErr('g-rule', $('#g-rule').value !== 'custom' || val('g-rule-custom') ? '' : t('errRule'), $('#g-rule-custom')),
+      setErr('g-age', $('#g-age-wrap').hidden || val('g-age') === '' || ageVal() ? '' : t('errAge'), $('#g-age')),
       setErr('g-phone', phoneOk($('#g-phone').value) ? '' : t('errPhone'), $('#g-phone'))
     ].every(Boolean);
     gf.addEventListener('input', () => { render(); if (touched) validate(); });
@@ -3741,6 +4120,7 @@ const CONFIG = {
       if (rule) { st.textContent = t('huntBlocked', { why: t(rule.note) }); return; }
       cfg.addons.add('hunt');
       renderBoard();
+      cfgToForm();
       st.textContent = t('huntAdded');
     });
   })();
@@ -3802,7 +4182,7 @@ const CONFIG = {
     rerender.push(render);
   })();
 
-  /* ---------- Phone bottom bar ---------- */
+  /* ---------- Phone bottom bar: hides while scrolling down, near Packages and near the booking form ---------- */
   (() => {
     const bar = $('#mbar'), wa = $('#mbar-wa');
     function render() {
@@ -3811,13 +4191,26 @@ const CONFIG = {
       else { wa.href = '#book'; wa.removeAttribute('target'); $('#mbar-wa-label').textContent = t('mbarAsk'); }
     }
     rerender.push(render);
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver((entries) => {
-        const on = entries.some((en) => en.isIntersecting);
-        bar.classList.toggle('is-away', on);
-        if (on) bar.setAttribute('inert', ''); else bar.removeAttribute('inert');
-      }, { threshold: 0.05 }).observe($('#book'));
+    const near = { book: false, board: false };
+    let down = false, lastY = window.scrollY || 0;
+    function apply() {
+      const away = near.book || near.board || down || !$('#drawer').hidden;
+      bar.classList.toggle('is-away', away);
+      if (away) bar.setAttribute('inert', ''); else bar.removeAttribute('inert');
     }
+    if ('IntersectionObserver' in window) {
+      const watch = (el, key, margin) => new IntersectionObserver((entries) => { near[key] = entries.some((en) => en.isIntersecting); apply(); }, { rootMargin: margin }).observe(el);
+      watch($('#book'), 'book', '0px 0px 240px 0px');   // the form brings its own submit button
+      watch($('.board'), 'board', '0px');               // Packages has its own sticky total + Book this
+    }
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY || 0;
+      if (Math.abs(y - lastY) < 8) return;
+      down = y > lastY && y > 160;
+      lastY = y;
+      apply();
+    }, { passive: true });
+    window.mbarApply = apply; // the drawer calls this when it opens and closes
   })();
 
   /* ---------- Bowling mini-game ---------- */
@@ -4167,6 +4560,7 @@ const CONFIG = {
   applyLang(initial);
   renderShabbos();
   if (OCC[location.hash.slice(1)]) applyOccasion(location.hash.slice(1), true);
+  openHashTarget(true); // a #gram / #quiz / #casting link opens its card on phones
 })();
 </script>
 </body>
