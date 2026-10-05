@@ -162,7 +162,7 @@ p{margin:0}
 .mini-frame{flex:none;display:grid;grid-template-columns:auto 28px;min-width:100px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font-variant-numeric:tabular-nums}
 .mf-label{padding:4px 6px;font-family:var(--font-stencil);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 .mf-mark{display:grid;place-items:center;height:26px;border-inline-start:1px solid var(--ink);border-bottom:1px solid var(--ink);font-weight:700;color:var(--foul-paper)}
-.mf-score{grid-column:1/-1;padding:2px 0 4px;text-align:center;font-family:var(--font-head);font-size:22px}
+.mf-score{grid-column:1/-1;padding:2px 6px 4px;text-align:center;font-family:var(--font-head);font-size:20px;white-space:nowrap}
 @media (prefers-reduced-motion:no-preference){.flip{animation:flip .45s ease}}
 @keyframes flip{0%{transform:rotateX(90deg)}100%{transform:rotateX(0)}}
 .lane{position:relative;height:140px;border-radius:4px;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;background:repeating-linear-gradient(180deg,var(--maple) 0 9px,var(--maple-2) 9px 10px,var(--maple-3) 10px 19px,var(--maple-deep) 19px 20px);box-shadow:inset 0 0 0 3px var(--gutter),inset 0 10px 18px rgba(0,0,0,.25),var(--shadow)}
@@ -184,7 +184,13 @@ p{margin:0}
 @media (prefers-reduced-motion:no-preference){.stamp:not([hidden]) span{animation:stampin .32s cubic-bezier(.2,1.6,.4,1)}.lane.flash{animation:laneflash .6s ease}}
 @keyframes stampin{0%{transform:rotate(-5deg) scale(1.7);opacity:0}100%{transform:rotate(-5deg) scale(1);opacity:1}}
 @keyframes laneflash{30%{box-shadow:inset 0 0 0 5px var(--foul),0 0 44px rgba(227,57,46,.85)}}
-.lane-msg{min-height:1.6em;margin-top:10px;font-family:var(--font-head);font-size:18px}
+.lane-foot{display:flex;flex-wrap:wrap;align-items:center;gap:2px 16px;margin-top:8px}
+.lane-msg{flex:1 1 260px;min-height:1.6em;margin:0;font-family:var(--font-head);font-size:18px}
+.lane-best{margin:0;font-size:14px;font-weight:600;color:var(--khaki);font-variant-numeric:tabular-nums}
+.lane-why{max-width:62ch;margin-top:4px;font-size:13px;font-style:italic;color:var(--paper-dim)}
+.mf-score{font-variant-numeric:tabular-nums}
+.pin-bit{position:absolute;top:50%;left:64%;width:6px;height:14px;margin:-7px 0 0 -3px;border-radius:3px 3px 4px 4px;background:var(--paper);box-shadow:inset 0 3px 0 var(--foul);pointer-events:none;animation:pinfly .85s ease-out forwards}
+@keyframes pinfly{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
 
 /* League */
 .roster{margin-top:28px;border:1px solid var(--rule-strong);background:var(--alley-2)}
@@ -613,7 +619,11 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
   .duo-note{display:none}
   #pk-fridays{display:none}
   .sheet-cell,.how li{padding:14px}
-  .hero-thesis,.hero-art .dude-board,#league .lead,#packages .lead,#what .lead,.how-title,.lane-sub{display:none}
+  .hero-thesis,.hero-art .dude-board,#league .lead,#packages .lead,#what .lead,.how-title{display:none}
+  .lane-hint{font-size:18px}
+  .lane-sub{font-size:13px;line-height:1.35}
+  .lane-why{font-size:12px;line-height:1.35}
+  .lane-msg{font-size:16px}
   .how{margin-top:12px}
   .hero-copy > .eyebrow{font-size:11px;letter-spacing:.06em}
   .hero-explain{font-size:13px}
@@ -671,7 +681,10 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
   .hero-explain{grid-row:10}
   .dude-board{grid-column:1/-1;grid-row:11;justify-self:start;max-width:200px;margin-top:22px}
   .lane-head{margin-top:14px}
-  .lane{height:112px}
+  .lane{height:100px}
+  .lane-foot{margin-top:6px}
+  .foot-strong{display:none}
+  .hero-from{margin-top:10px}
 
   .occ-band{padding-block:10px}
   .occ-row{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity}
@@ -865,6 +878,7 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
         <div>
           <p class="lane-hint" data-i18n="laneHint"></p>
           <p class="lane-sub" data-i18n="laneSub"></p>
+          <p class="lane-why" data-i18n="laneWhy"></p>
         </div>
         <div class="mini-frame" aria-hidden="true">
           <span class="mf-label" data-i18n="frameLabel"></span>
@@ -897,7 +911,11 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
         </div>
         <div class="stamp" id="stamp" hidden><span data-i18n="stampFoul"></span></div>
       </div>
-      <p class="lane-msg" id="lane-msg" aria-live="polite"></p>
+      <div class="lane-foot">
+        <p class="lane-msg" id="lane-msg" aria-live="polite"></p>
+        <p class="lane-best" id="lane-best" hidden></p>
+        <button type="button" class="link-btn" id="lane-again" data-i18n="laneAgain" hidden></button>
+      </div>
     </div>
   </section>
 
@@ -1501,15 +1519,12 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
 "dudeArtAlt": "A carnival face-in-the-hole board of a cartoon Dude in a bathrobe, holding a White Russian, with an empty oval where the face goes",
 "yourFace": "your face here",
 "nowCasting": "Now casting",
-"laneHint": "Try stepping over the line",
-"laneSub": "Drag the shoe toward the red line, or focus it and use the arrow keys.",
-"shoeAria": "Rental bowling shoe. Move it toward the foul line.",
+"laneHint": "How close can you get?",
+"laneSub": "Drag the shoe toward the foul line and let go. Get close. Don't cross.",
+"shoeAria": "Rental bowling shoe. Arrow keys move it, Shift for small steps, Enter lets go.",
 "foulLabel": "Foul line",
 "stampFoul": "Over the line! Mark it zero!",
-"msgBack": "Am I wrong?",
-"msgIdle": "Behind the line. Good. There are rules.",
-"frameLabel": "Frame 1",
-"foulCount": "Fouls tonight: {n}",
+"frameLabel": "Gap",
 "leagueEyebrow__duo": "League standings",
 "leagueEyebrow__solo": "Tonight's lineup",
 "leagueTitle__duo": "The League",
@@ -2086,7 +2101,19 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
 "v_atzmaut": "Yom HaAtzmaut. Festive, and busy: book early.",
 "v_gedaliah": "Tzom Gedaliah, a minor fast. Some families avoid celebrations.",
 "v_tevet": "The Tenth of Tevet, a minor fast. Some families avoid celebrations.",
-"v_esther": "Ta'anit Esther, a minor fast. Some families avoid celebrations."
+"v_esther": "Ta'anit Esther, a minor fast. Some families avoid celebrations.",
+"laneWhy": "In the movie, a guy stepped over the line. Walter did not let it go. Neither will Naf at your party.",
+"laneReady": "The shoe is on the approach. Your move.",
+"laneGap": "{cm} cm from the line.",
+"laneStrike": "Calmer than you are.",
+"laneGood": "Walter approves. There are rules.",
+"laneTimid": "Timid. But legal.",
+"laneFar": "Are you even bowling?",
+"laneBest": "Best tonight: {cm} cm",
+"laneAgain": "Try again",
+"cmUnit": "cm",
+"shoeValue": "{cm} cm from the foul line",
+"shoeOver": "Past the foul line"
 },
 "he": {
 "navAria": "ניווט",
@@ -2124,15 +2151,12 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
 "dudeArtAlt": "לוח צילום של לונה פארק עם הדוד מצויר בחלוק רחצה, מחזיק ווייט רשן, ועם חור ריק במקום הפנים",
 "yourFace": "הפרצוף שלך כאן",
 "nowCasting": "מלהקים עכשיו",
-"laneHint": "נסו לדרוך על הקו",
-"laneSub": "גררו את הנעל לכיוון הקו האדום, או סמנו אותה והשתמשו בחיצים.",
-"shoeAria": "נעל באולינג שכורה. הזיזו אותה לכיוון קו העבירה.",
+"laneHint": "כמה קרוב אתם מעזים?",
+"laneSub": "גררו את הנעל לכיוון קו העבירה ושחררו. להתקרב. לא לעבור.",
+"shoeAria": "נעל באולינג שכורה. החיצים מזיזים אותה, Shift בצעדים קטנים, ואנטר משחרר.",
 "foulLabel": "קו עבירה",
 "stampFoul": "עברתם את הקו! תרשום אפס!",
-"msgBack": "אני טועה?",
-"msgIdle": "מאחורי הקו. יופי. יש חוקים.",
-"frameLabel": "פריים 1",
-"foulCount": "עבירות הערב: {n}",
+"frameLabel": "מרחק",
 "leagueEyebrow__duo": "טבלת הליגה",
 "leagueEyebrow__solo": "ההרכב של הערב",
 "leagueTitle__duo": "הליגה",
@@ -2709,7 +2733,19 @@ input[type="date"]::-webkit-date-and-time-value,input[type="time"]::-webkit-date
 "v_atzmaut": "יום העצמאות. חגיגי ועמוס: כדאי להזמין מוקדם.",
 "v_gedaliah": "צום גדליה, צום קל. יש משפחות שלא עורכות שמחות.",
 "v_tevet": "עשרה בטבת, צום קל. יש משפחות שלא עורכות שמחות.",
-"v_esther": "תענית אסתר, צום קל. יש משפחות שלא עורכות שמחות."
+"v_esther": "תענית אסתר, צום קל. יש משפחות שלא עורכות שמחות.",
+"laneWhy": "בסרט מישהו דרך על הקו. וולטר לא עבר על זה בשתיקה. גם נף לא יעבור על זה במסיבה שלכם.",
+"laneReady": "הנעל על המסלול. התור שלכם.",
+"laneGap": "{cm} ס״מ מהקו.",
+"laneStrike": "רגוע יותר מכם.",
+"laneGood": "וולטר מאשר. יש חוקים.",
+"laneTimid": "פחדני. אבל חוקי.",
+"laneFar": "אתם בכלל משחקים באולינג?",
+"laneBest": "השיא הערב: {cm} ס״מ",
+"laneAgain": "עוד ניסיון",
+"cmUnit": "ס״מ",
+"shoeValue": "{cm} ס״מ מקו העבירה",
+"shoeOver": "מעבר לקו העבירה"
 }
 }
 </script>
@@ -3330,67 +3366,99 @@ const CONFIG = {
   }
   window.addEventListener('hashchange', () => openHashTarget(true));
 
-  /* ---------- Hero foul line ---------- */
+  /* ---------- Hero game: How close can you get? (release as close to the foul line as you dare) ---------- */
   (() => {
     const lane = $('#lane'), shoe = $('#shoe'), stamp = $('#stamp'), msg = $('#lane-msg');
-    const mark = $('#mf-mark'), score = $('#mf-score');
-    const FOUL = 0.64;
-    let x = 0.06, over = false, fouls = 0, msgKey = 'msgIdle', drag = null;
+    const mark = $('#mf-mark'), score = $('#mf-score'), bestEl = $('#lane-best'), again = $('#lane-again');
+    const FOUL = 0.64, TOE = 0.97, START = 0.06, APPROACH_CM = 450; // the approach to the foul line is about 4.5 m
+    let frac = START, drag = null, result = null, best = null;
+    try { const b = parseFloat(store.get('bl-best-cm')); if (b >= 0) best = b; } catch (e) { /* no storage */ }
     const range = () => Math.max(1, lane.clientWidth - shoe.offsetWidth);
+    const lineX = () => lane.clientWidth * FOUL;
+    const cmPerPx = () => APPROACH_CM / Math.max(1, lineX());
+    const gapCm = () => (lineX() - (frac * range() + shoe.offsetWidth * TOE)) * cmPerPx();
+    const fmtCm = (cm) => (cm < 10 ? cm.toFixed(1) : String(Math.round(cm)));
     function flip(el, text) { el.textContent = text; el.classList.remove('flip'); void el.offsetWidth; el.classList.add('flip'); }
-    function renderMsg() {
-      msg.textContent = msgKey === 'stampFoul' ? t('stampFoul') + ' ' + t('foulCount', { n: fouls }) : t(msgKey);
-      shoe.setAttribute('aria-valuetext', over ? t('stampFoul') : t('msgIdle'));
-    }
     function place() {
-      shoe.style.transform = 'translateX(' + (x * range()).toFixed(1) + 'px)';
-      shoe.setAttribute('aria-valuenow', String(Math.round(x * 100)));
-      const toe = x * range() + shoe.offsetWidth * 0.94;
-      const isOver = toe > lane.clientWidth * FOUL;
-      if (isOver === over) return;
-      over = isOver;
-      if (over) {
-        fouls += 1; msgKey = 'stampFoul'; stamp.hidden = false;
+      shoe.style.transform = 'translateX(' + (frac * range()).toFixed(2) + 'px)';
+      const g = gapCm();
+      shoe.setAttribute('aria-valuenow', String(Math.round(frac * 100)));
+      shoe.setAttribute('aria-valuetext', g < 0 ? t('shoeOver') : t('shoeValue', { cm: fmtCm(g) }));
+    }
+    function render() {
+      if (!result) msg.textContent = t('laneReady');
+      else if (result.over) msg.textContent = t('stampFoul');
+      else msg.textContent = t('laneGap', { cm: fmtCm(result.cm) }) + ' ' + t(result.band);
+      if (result && !result.over) score.textContent = fmtCm(result.cm) + ' ' + t('cmUnit');
+      bestEl.hidden = best === null;
+      bestEl.textContent = best === null ? '' : t('laneBest', { cm: fmtCm(best) });
+      again.hidden = !result;
+      place();
+    }
+    function clearResult() {
+      if (!result) return;
+      result = null; stamp.hidden = true; mark.textContent = ''; score.textContent = '–';
+      render();
+    }
+    function burst() { // a few pins fly off the lane
+      if (reduceMotion) return;
+      for (let i = 0; i < 12; i++) {
+        const p = document.createElement('i');
+        p.className = 'pin-bit';
+        p.style.setProperty('--dx', Math.round(Math.cos(i / 12 * 6.28) * (40 + i * 4)) + 'px');
+        p.style.setProperty('--dy', Math.round(Math.sin(i / 12 * 6.28) * (30 + i * 3)) + 'px');
+        p.style.setProperty('--r', (i * 47) + 'deg');
+        lane.appendChild(p);
+        setTimeout(() => p.remove(), 900);
+      }
+    }
+    function release() {
+      const g = gapCm();
+      if (g < 0) {
+        result = { over: true };
+        stamp.hidden = false;
         lane.classList.remove('flash'); void lane.offsetWidth; lane.classList.add('flash');
         flip(mark, 'F'); flip(score, '0');
         Sound.buzzer();
       } else {
-        msgKey = 'msgBack'; stamp.hidden = true; Sound.blip();
+        const cm = Math.round(g * 10) / 10;
+        const band = cm <= 2 ? 'laneStrike' : cm <= 10 ? 'laneGood' : cm <= 50 ? 'laneTimid' : 'laneFar';
+        result = { over: false, cm, band };
+        flip(mark, cm <= 2 ? 'X' : '');
+        flip(score, fmtCm(cm) + ' ' + t('cmUnit'));
+        if (cm <= 2) { burst(); Sound.clatter(8); } else if (cm <= 10) Sound.blip(); else Sound.thud();
+        if (best === null || cm < best) { best = cm; store.set('bl-best-cm', String(cm)); }
       }
-      renderMsg();
+      render();
     }
     shoe.addEventListener('pointerdown', (e) => {
-      drag = { id: e.pointerId, startX: e.clientX, startPos: x };
-      try { shoe.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+      clearResult();
+      drag = { id: e.pointerId, startX: e.clientX, startFrac: frac };
+      try { shoe.setPointerCapture(e.pointerId); } catch (err) { /* synthetic pointer */ }
       e.preventDefault();
     });
     shoe.addEventListener('pointermove', (e) => {
       if (!drag || e.pointerId !== drag.id) return;
-      x = Math.max(0, Math.min(1, drag.startPos + (e.clientX - drag.startX) / range()));
-      place();
+      frac = Math.max(0, Math.min(1, drag.startFrac + (e.clientX - drag.startX) / range()));
+      place(); // nothing is judged until you let go
     });
-    const end = () => { drag = null; };
-    shoe.addEventListener('pointerup', end);
-    shoe.addEventListener('pointercancel', end);
-    lane.addEventListener('click', (e) => {
-      if (e.target.closest('#shoe')) return;
-      const rect = lane.getBoundingClientRect();
-      x = Math.max(0, Math.min(1, (e.clientX - rect.left - shoe.offsetWidth / 2) / range()));
-      place();
-    });
+    shoe.addEventListener('pointerup', (e) => { if (drag && e.pointerId === drag.id) { drag = null; release(); } });
+    shoe.addEventListener('pointercancel', () => { drag = null; });
     shoe.addEventListener('keydown', (e) => {
-      const step = 0.06;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') x = Math.min(1, x + step);
-      else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') x = Math.max(0, x - step);
-      else if (e.key === 'Home') x = 0;
-      else if (e.key === 'End') x = 1;
-      else return;
-      e.preventDefault();
-      place();
+      const stepCm = e.key === 'PageUp' || e.key === 'PageDown' ? 50 : e.shiftKey ? 1 : 5;
+      const dir = { ArrowRight: 1, ArrowUp: 1, PageUp: 1, ArrowLeft: -1, ArrowDown: -1, PageDown: -1 }[e.key];
+      if (dir) {
+        e.preventDefault();
+        clearResult();
+        frac = Math.max(0, Math.min(1, frac + dir * (stepCm / cmPerPx()) / range()));
+        place();
+      } else if (e.key === 'Home') { e.preventDefault(); clearResult(); frac = START; place(); }
+      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); release(); }
     });
+    again.addEventListener('click', () => { frac = START; clearResult(); render(); shoe.focus(); });
     window.addEventListener('resize', place);
-    rerender.push(renderMsg);
-    place();
+    rerender.push(render);
+    render();
   })();
 
   /* ---------- Packages configurator ---------- */
